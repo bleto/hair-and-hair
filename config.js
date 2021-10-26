@@ -9,6 +9,7 @@ module.exports = {
   manifestIcon: 'src/assets/images/hah-color-top.svg',
   heading: 'Hair & Hair',
   subHeading: 'Gabinet trychologiczny',
+  pathPrefix: '/hair-and-hair',
   // social
   socialLinks: [
     {
