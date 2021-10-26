@@ -1039,6 +1039,10 @@ button,
 			border-bottom-left-radius: 3px;
 		}
 
+		p {
+			font-size: 13pt;
+		}
+
 		@include breakpoint('<=medium') {
 			@include padding(3em, 2em);
 			text-align: center;
@@ -1516,7 +1520,7 @@ button,
 			line-height: inherit;
 
 			@include breakpoint('<=small') {
-				font-size: 0.8em;
+				// font-size: 0.8em;
 			}
 		}
 	}
@@ -1969,4 +1973,22 @@ body.is-mobile {
 
 .face-image img{
 	width: 100%!important;
+}
+
+.booksy-iframe {
+	width: 100%;
+	height: 950px;
+	overflow: 'visible';
+
+	@include breakpoint('<=large') {
+		height: 1000px;
+	}
+
+	@include breakpoint('<=small') {
+		height: 1300px;
+	}
+
+	@include breakpoint('<=xsmall') {
+		height: 1600px;
+	}
 }

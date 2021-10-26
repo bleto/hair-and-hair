@@ -6,8 +6,7 @@ module.exports = {
   manifestBackgroundColor: '#AA8E5D',
   manifestThemeColor: '#AA8E5D',
   manifestDisplay: 'standalone',
-  manifestIcon: 'src/assets/img/website-icon.png',
-  pathPrefix: `/gatsby-starter-spectral/`, // This path is subpath of your hosting https://domain/portfolio
+  manifestIcon: 'src/assets/images/hah-color-top.svg',
   heading: 'Hair & Hair',
   subHeading: 'Gabinet trychologiczny',
   // social

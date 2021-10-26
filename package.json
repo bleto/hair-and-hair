@@ -1,22 +1,22 @@
 {
-  "name": "gatsby-starter-spectral",
-  "version": "0.0.1",
-  "description": "Gatsby.js V2 starter template based on Spectral by HTML5 UP",
+  "name": "hair-and-hair",
+  "version": "0.1.0",
+  "description": "Gatsby.js website",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anubhavsrivastava/gatsby-starter-spectral.git"
+    "url": "git+https://github.com/bleto/hair-and-hair.git"
   },
   "author": {
-    "name": "Anubhav Srivastava",
-    "email": "anubhav.srivastava00@gmail.com"
+    "name": "Piotr Bletek (bleto)",
+    "email": "p.bletek@gmail.com"
   },
   "dependencies": {
+    "express-basic-auth": "^1.2.0",
     "gatsby": "^2.32.13",
     "gatsby-plugin-manifest": "^2.12.1",
     "gatsby-plugin-offline": "^3.10.2",
     "gatsby-plugin-react-helmet": "^3.10.0",
     "gatsby-plugin-sass": "^2.8.0",
-    "iframe-resizer-react": "^1.1.0",
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -41,8 +41,8 @@
   },
   "keywords": [
     "gatsby",
-    "gatsby-starter",
-    "gatsby-starter-spectral"
+    "hair-and-hair",
+    "trichology"
   ],
   "license": "MIT",
   "bugs": {

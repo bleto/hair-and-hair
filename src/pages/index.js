@@ -2,9 +2,9 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Scroll from '../components/Scroll';
 
-import pic1 from '../assets/images/pic04.png';
-import pic2 from '../assets/images/pic02.png';
-import pic3 from '../assets/images/pic03.png';
+import pic1 from '../assets/images/pic01.png';
+import pic2 from '../assets/images/pic02.jpg';
+import pic3 from '../assets/images/pic03.jpg';
 import logoTop from '../assets/images/hah-color-top.svg';
 import config from '../../config';
 
@@ -30,17 +30,17 @@ const IndexPage = () => (
         <header>
           <h2>Witam Cię w HAIR&HAIR</h2>
           <p>
-            Zobacz cennik lub umów sie na wizytę
+            miejsce dla zdrowych włosów i skóry
           </p>
         </header>
         <ul className="actions special">
           <li>
-            <a href="/Booking" className="button fit primary">
+            <a href="/rezerwuj" className="button fit primary">
               Umów wizytę
             </a>
           </li>
           <li>
-            <a href="/Pricing" className="button fit">
+            <a href="/cennik" className="button fit">
               Cennik
             </a>
           </li>
@@ -58,27 +58,31 @@ const IndexPage = () => (
             O mnie
           </h2>
           <p>
-            Nazywam się <b>Natalia Kuklińska</b> i jestem absolwentką Collegium Medicum UJ na wydziale farmacji, na kierunku kosmetologia...
-            Jednak zdecydowanie wolę mówić o swojej pasji, którą od kilku lat jest trychologia.
-            <br /><br />
-            Trychologia to ciągle młoda i szybko rozwijająca się dziedzina. Stała się moją pasją już na studiach. Łączy w sobie zagadnienia wielu dziedzin tj. dermatologia, endokrynologia, kosmetologia czy dietetyka.
-            Jako kosmetolog i trycholog od zawsze wiedziałam, że na nasze zdrowie i piękno składa się wiele czynników, a całościowe podejście do człowieka i jego holistyczna opieka może pomóc nam utrzymać zdrową skórę i zdrowe włosy- tym właśnie kieruję się w mojej codziennej pracy
+            Nazywam się <b>Natalia Kuklińska</b> i jestem absolwentką Collegium Medicum UJ na wydziale
+            farmacji, na kierunku kosmetologia... Jednak zdecydowanie wolę mówić o swojej pasji, którą
+            od kilku lat jest trychologia.<br /><br />
+            Jako kosmetolog i trycholog od zawsze wiedziałam, że na nasze zdrowie i piękno składa się
+            wiele czynników, a całościowe podejście do człowieka i jego holistyczna opieka może
+            pomóc nam utrzymać zdrową skórę i zdrowe włosy- tym właśnie kieruję się w mojej
+            codziennej pracy.
           </p>
         </div>
       </section>
       <section className="spotlight">
-        <div className="image">
-          <img src={pic2} alt="" />
+        <div className="image face-image">
+          <img src={pic2} alt="Gabinet Hair&Hair" />
         </div>
         <div className="content">
-          <h2>
-            Tortor dolore feugiat
-            <br />
-            elementum magna
-          </h2>
           <p>
-            Aliquam ut ex ut augue consectetur interdum. Donec hendrerit
-            imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.
+            Ideą mojej pracy jest towarzyszenie wielu osobom w bardzo często trudnym dla nich czasie,
+            związanym z łysieniem, nadmierną utratą włosów czy problemami skóry. Wszystkie te
+            problemy często wpływają na zmniejszenie samooceny oraz obniżenie komfortu życia.
+            Dlatego też powstało HAIR&amp;HAIR miejsce gdzie chcę zrozumieć Twój problem i pomóc Ci
+            go rozwiązać.<br /><br />
+            Jako trycholog kosmetolog od kilku lat pracuję z klientami z problematyczną skórą głowy,
+            przerzedzeniem, nadmiernym wypadaniem włosów i łysieniem. Mam możliwość współpracy i
+            dzielenia się wiedzą ze specjalistami w dziedzinie dermatologii, immunologii, dietetyki i
+            trychologii- co niesamowicie cenię.
           </p>
         </div>
       </section>
@@ -87,14 +91,15 @@ const IndexPage = () => (
           <img src={pic3} alt="" />
         </div>
         <div className="content">
-          <h2>
-            Augue eleifend aliquet
-            <br />
-            sed condimentum
-          </h2>
           <p>
-            Aliquam ut ex ut augue consectetur interdum. Donec hendrerit
-            imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.
+            Oprócz prowadzenia kuracji trychologicznym w swoim gabinecie, dzielę się wiedzą z
+            początkującymi w dziedzinie trychologii studentami wrocławskiej uczelni.
+            <br /><br />
+            Ciągle poszerzam swoją wiedzę podczas szkoleń czy konferencji naukowych. Jestem
+            przekonana, że odpowiednia edukacja i stały rozwój pozwolą mi w holistyczny sposób
+            zatroszczyć się o moich klientów, co w konsekwencji przełoży się nie tylko na polepszenie
+            jakości włosów i skóry, ale szczególnie na poziom komfortu i zadowolenia z jakże pięknego
+            życia.
           </p>
         </div>
       </section>
@@ -105,38 +110,51 @@ const IndexPage = () => (
         <header className="major">
           <h2>FAQ</h2>
           <p>
-            Najczestrze pytania
+            Najczęściej zadawane pytania
           </p>
         </header>
         <ul className="features">
-          <li className="icon fa-paper-plane">
-            <h3>Jak przygotowac sie do wizyty</h3>
+          <li className="icon solid fa-clipboard-list">
+            <h3>Jak należy przygotować się do pierwszej konsultacji?</h3>
             <p>
-              dfsdfs
+              ● 24h przed wizytą nie myć głowy<br />
+              ● podczas ostatniego mycia przed wizytą nie używać szamponu
+              p/łupieżowego<br />
+              ● przed wizytą nie stosować suchego szamponu<br />
+              ● zapisać na kartce przyjmowane leki, suplementy oraz preparaty
+              do włosów i skóry głowy
             </p>
           </li>
-          <li className="icon solid fa-laptop">
-            <h3>Ac Augue Eget</h3>
+          <li className="icon solid fa-eye">
+            <h3>Jak wygląda pierwsza konsultacja?</h3>
             <p>
-              Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem
-              tincidunt nullam amet leo Aenean ligula consequat consequat.
+              Podczas konsultacji trycholog przeprowadza szczegółowy wywiad, który
+              jest bardzo ważny i stanowi podstawę pierwszej wizyty. <br />Już na etapie
+              rozmowy pada mnóstwo istotnych dla trychologa wskazówek, które
+              pomogą dokładnie określić problem i jego przyczynę.<br />
+              Następnie wykonywane jest badanie trichoskopem- urządzenie służące
+              do badania skóry głowy i włosów.<br />
+              Na podstawie zebranego wywiadu i badania trycholog układa
+              indywidualnie opracowany dla każdego klienta TRICHOPLAN.
             </p>
           </li>
-          <li className="icon solid fa-code">
-            <h3>Mus Scelerisque</h3>
+          <li className="icon solid fa-allergies">
+            <h3>Z jakim problemem można zgłosić się do trychologa w HAIR&amp;HAIR ?</h3>
             <p>
-              Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem
-              tincidunt nullam amet leo Aenean ligula consequat consequat.
+              Jest wiele schorzeń skóry głowy i włosów.
+              Najczęściej pojawiające się to: łojotokowe zapalenie skóry głowy, łupież
+              czy różne odmiany łysienia (telogenowe, androgenowe, plackowate itd.).
+              Nie można też zapomnieć o atopowym zapaleniu skóry, łuszczycy czy
+              schorzeniach o podłożu psychicznym takich jak trichotillomania
+              (wyrywanie włosów).
             </p>
           </li>
-          <li className="icon solid fa-headphones-alt">
-            <h3>Mauris Imperdiet</h3>
+          <li className="icon solid fa-paint-brush">
+            <h3>Czy można farbować włosy przed konsultacją?</h3>
             <p>
-              Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem
-              tincidunt nullam amet leo Aenean ligula consequat consequat.
+              Włosy można farbować nie później niż tydzień przed konsultacją.
             </p>
           </li>
-
         </ul>
       </div>
     </section>
@@ -145,10 +163,10 @@ const IndexPage = () => (
       <div className="inner">
         <header className="major">
           <h2>
-            Podoba Ci się HAIR&HAIR !
+            CHCESZ BYĆ NA BIEŻĄCO ?
           </h2>
           <p>
-            Odiwedź mnie na moich media społecznościowych.
+            Odwiedź HAIR&amp;HAIR w mediach społecznościowych
           </p>
         </header>
         <ul className="icons major">
