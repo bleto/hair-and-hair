@@ -841,11 +841,19 @@ table {
 			&:nth-child(2n + 1) {
 				background-color: _palette(border-bg);
 			}
+
+			@include breakpoint('<=small') {
+				font-size: 0.8em;
+			}
 		}
 	}
 
 	td {
 		padding: 0.75em 0.75em;
+
+		@include breakpoint('<=small') {
+			padding: 0.55em 0.55em;
+		}
 	}
 
 	th {
@@ -854,6 +862,10 @@ table {
 		font-weight: _font(weight-bold);
 		padding: 0 0.75em 0.75em 0.75em;
 		text-align: left;
+
+		@include breakpoint('<=xsmall') {
+			font-size: 0.8em;
+		}
 	}
 
 	thead {
@@ -883,6 +895,10 @@ table {
 					}
 					&.nowrap {
 						white-space: nowrap;
+
+						@include breakpoint('<=small') {
+							white-space: normal;
+						}
 					}
 				}
 
@@ -1813,7 +1829,7 @@ body.is-preload, .main-body.is-preload {
 #main {
 	> header {
 		@include padding(12em, 0);
-		@include vendor('background-image', ('linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../images/hah-bg.png")'));
+		// @include vendor('background-image', ('linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../images/hah-bg.png")'));
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -1939,6 +1955,8 @@ body.is-mobile {
 body.landing, .main-body.landing {
 	#page-wrapper {
 		@include vendor('background-image', ('linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../images/hah-bg.png")'));
+		@include vendor('background-image', ('-webkit-linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../images/hah-bg.png")'));
+		// box-shadow: inset 0px 1000px 0px 0px rgba(0,0,0,0.5);
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
