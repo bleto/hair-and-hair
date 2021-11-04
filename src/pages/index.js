@@ -1,15 +1,17 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Scroll from '../components/Scroll';
+import SEO from '../components/Seo';
 
-import pic1 from '../assets/images/pic01.png';
-import pic2 from '../assets/images/pic02.jpg';
-import pic3 from '../assets/images/pic03.jpg';
+import pic1 from '../assets/images/pic01.webp';
+import pic2 from '../assets/images/pic02.webp';
+import pic3 from '../assets/images/pic03.webp';
 import logoTop from '../assets/images/hah-color-top.svg';
 import config from '../../config';
 
 const IndexPage = () => (
   <Layout>
+    <SEO title="Strona główna" description="Witam Cię w HAIR&HAIR - miejsce dla zdrowych włosów i skóry" />
     <section id="banner">
       <div className="logo">
         <img className="logo" src={logoTop} alt={config.heading} width="24%" />
@@ -51,7 +53,7 @@ const IndexPage = () => (
     <section id="two" className="wrapper alt style9">
       <section className="spotlight">
         <div className="image face-image">
-          <img src={pic1} alt="Natalia Kuklińska" />
+          <img src={pic1} alt="Natalia Kuklińska trycholog" width="100%" height="100%" />
         </div>
         <div className="content">
           <h2>
@@ -70,7 +72,7 @@ const IndexPage = () => (
       </section>
       <section className="spotlight">
         <div className="image face-image">
-          <img src={pic2} alt="Gabinet Hair&Hair" />
+          <img src={pic2} alt="Gabinet Hair&Hair" width="100%" height="100%" />
         </div>
         <div className="content">
           <p>
@@ -88,7 +90,7 @@ const IndexPage = () => (
       </section>
       <section className="spotlight">
         <div className="image">
-          <img src={pic3} alt="" />
+          <img src={pic3} alt="Gabinet Hair&Hair" width="100%" height="100%" />
         </div>
         <div className="content">
           <p>
