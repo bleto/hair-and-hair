@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://hairandhair.pl/sitemap/sitemap-index.xml
+Host: https://hairandhair.pl
