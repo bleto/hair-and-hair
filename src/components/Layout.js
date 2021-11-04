@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
 import '../assets/sass/main.scss';
@@ -43,15 +42,6 @@ class Layout extends Component {
         `}
         render={data => (
           <>
-            <Helmet
-              title={data.site.siteMetadata.title}
-              meta={[
-                { name: 'description', content: 'Hair&Hair' },
-                { name: 'keywords', content: 'site, web' },
-              ]}
-            >
-              <html lang="pl" />
-            </Helmet>
             <div
               className={
                 isPreloaded

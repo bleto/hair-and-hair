@@ -1,9 +1,11 @@
 import React from 'react';
 
 import Layout from '../components/Layout';
+import SEO from '../components/Seo';
 
 const PricingPage = () => (
   <Layout>
+    <SEO title="Cennik" description="Znajdź coś dla siebie" />
     <article id="main">
       <header>
         <h2>Cennink</h2>

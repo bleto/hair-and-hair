@@ -845,6 +845,9 @@ table {
 			@include breakpoint('<=small') {
 				font-size: 0.8em;
 			}
+			@include breakpoint('<=xsmall') {
+				font-size: 0.65em;
+			}
 		}
 	}
 
@@ -853,6 +856,9 @@ table {
 
 		@include breakpoint('<=small') {
 			padding: 0.55em 0.55em;
+		}
+		@include breakpoint('<=xsmall') {
+			padding: 0.45em 0.45em;
 		}
 	}
 
@@ -863,8 +869,11 @@ table {
 		padding: 0 0.75em 0.75em 0.75em;
 		text-align: left;
 
-		@include breakpoint('<=xsmall') {
+		@include breakpoint('<=small') {
 			font-size: 0.8em;
+		}
+		@include breakpoint('<=xsmall') {
+			font-size: 0.65em;
 		}
 	}
 
@@ -1829,7 +1838,7 @@ body.is-preload, .main-body.is-preload {
 #main {
 	> header {
 		@include padding(12em, 0);
-		// @include vendor('background-image', ('linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../images/hah-bg.png")'));
+		// @include vendor('background-image', ('linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../images/hah-bg.webp")'));
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -1954,9 +1963,12 @@ body.is-mobile {
 
 body.landing, .main-body.landing {
 	#page-wrapper {
-		@include vendor('background-image', ('linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../images/hah-bg.png")'));
-		@include vendor('background-image', ('-webkit-linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../images/hah-bg.png")'));
-		// box-shadow: inset 0px 1000px 0px 0px rgba(0,0,0,0.5);
+		@include vendor('background', 'url("../images/hah-bg.webp")');
+		@include vendor('background', (-moz-linear-gradient(0deg, rgba(0,0,0,0.5) 100%, rgba(0,0,0,0.05) 100%), 'url("../images/hah-bg.webp")'));
+		@include vendor('background', (-webkit-linear-gradient(0deg, rgba(0,0,0,0.5) 100%, rgba(0,0,0,0.05) 100%), 'url("../images/hah-bg.webp")'));
+		@include vendor('background', (linear-gradient(0deg, rgba(0,0,0,0.5) 100%, rgba(0,0,0,0.05) 100%), 'url("../images/hah-bg.webp")'));
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -1977,7 +1989,7 @@ body.is-mobile {
 
 		#banner,
 		.wrapper.style4 {
-			@include vendor('background-image', ('linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../images/hah-bg.png")'));
+			@include vendor('background-image', ('linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../images/hah-bg.webp")'));
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: cover;
@@ -1995,18 +2007,10 @@ body.is-mobile {
 
 .booksy-iframe {
 	width: 100%;
-	height: 950px;
+	height: 1300px;
 	overflow: 'visible';
 
-	@include breakpoint('<=large') {
-		height: 1000px;
-	}
-
-	@include breakpoint('<=small') {
-		height: 1300px;
-	}
-
-	@include breakpoint('<=xsmall') {
-		height: 1600px;
+	@include breakpoint('<=xlarge') {
+		height: 1800px;
 	}
 }

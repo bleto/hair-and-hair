@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import SEO from '../components/Seo';
 
 const BookingPage = () => {
 
@@ -15,6 +16,7 @@ const BookingPage = () => {
 
   return (
     <Layout>
+      <SEO title="Rezerwacja" description="Zarezerwuj wizytę" />
       <article id="main">
         <header>
           <h2>Rezerwuj</h2>

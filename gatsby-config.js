@@ -4,6 +4,7 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: config.siteTitle,
+    siteUrl: config.manifestSiteUrl,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -20,6 +21,15 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: config.manifestSiteUrl,
+        sitemap: 'https://hairandhair.pl/sitemap/sitemap-index.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     'gatsby-plugin-offline',
     {
       resolve: "gatsby-plugin-google-tagmanager",

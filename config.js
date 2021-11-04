@@ -1,7 +1,9 @@
 module.exports = {
   siteTitle: 'Hair & Hair', // <title>
-  manifestName: 'Hair & Hair',
+  manifestName: 'Hair & Hair Gabinet Trychologiczny',
   manifestShortName: 'Hair & Hair', // max 12 characters
+  manifestDescription: 'Gabinet trychologiczny Natalia Kuklińska', // max 12 characters
+  manifestSiteUrl: 'https://hairandhair.pl',
   manifestStartUrl: '/',
   manifestBackgroundColor: '#AA8E5D',
   manifestThemeColor: '#AA8E5D',
@@ -10,6 +12,17 @@ module.exports = {
   heading: 'Hair & Hair',
   subHeading: 'Gabinet trychologiczny',
   pathPrefix: '/',
+  keywords: [
+    'hair-and-hair',
+    'hair&hair',
+    'trychologia',
+    'trychologia',
+    'włosy',
+    'łysienie',
+    'wypadanie włosów',
+    'skóra głowy',
+    'włosy',
+  ],
   // social
   socialLinks: [
     {

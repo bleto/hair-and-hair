@@ -2,8 +2,8 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 
-import pic1 from '../assets/images/pic01.png';
-import banner from '../assets/images/hah-bg.png';
+import pic1 from '../assets/images/pic01.webp';
+import banner from '../assets/images/hah-bg.webp';
 const IndexPage = () => <Layout>
 	<article id="main">
 		<header>
