@@ -1,18 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
+import { createWidgetContainer, createIframe } from '../utils/booksy';
 
 const BookingPage = () => {
+  useEffect(() => {
+    let widgetContainer = null;
+    const iframeData = {
+      id: 96326,
+      lang: 'pl',
+      country: 'pl',
+      mode: 'inline',
+      theme: 'default',
+    };
+    const iframeSrc =
+      'https://booksy.com/widget/index.html?id=' +
+      iframeData.id +
+      '&lang=' +
+      iframeData.lang +
+      '&country=' +
+      iframeData.country +
+      '&mode=' +
+      iframeData.mode +
+      '&theme=' +
+      iframeData.theme;
 
-  // const iframeData = {
-  //   id: 96326,
-  //   uniqueId: '58cda12586',
-  //   lang: 'pl',
-  //   country: 'pl',
-  //   mode: 'dialog',
-  //   theme: 'default'
-  // };
-  // const url = `https://booksy.com/widget/index.html?id=${iframeData.id}&amp;lang=${iframeData.lang}&amp;country=${iframeData.country}&amp;mode=${iframeData.mode}&amp;theme=${iframeData.theme}&amp;uniqueId=${iframeData.uniqueId}`;
+    try {
+      widgetContainer = createWidgetContainer(iframeData);
+
+      createIframe(widgetContainer, iframeSrc);
+    } catch (e) {
+      console.error(e);
+    }
+    return () => {
+      widgetContainer.remove();
+    };
+  }, []);
 
   return (
     <Layout>
@@ -23,20 +46,11 @@ const BookingPage = () => {
           <p>Zarezerwuj wizytę</p>
         </header>
         <section className="wrapper style5">
-          <div className="inner">
-            <iframe
-              className="booksy-iframe"
-              title="Rejestracja Booksy"
-              width="100%"
-              // sandbox="allow-same-origin allow-forms allow-popups"
-              frameBorder="0"
-              src="https://booksy.com/widget/index.html?id=96326&amp;lang=pl&amp;country=pl&amp;mode=dialog&amp;theme=default&amp;uniqueId=58cda12586"
-            ></iframe>
-          </div>
+          <div className="inner iframeContainer" />
         </section>
       </article>
     </Layout>
-  )
+  );
 };
 
 export default BookingPage;
