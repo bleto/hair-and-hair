@@ -27,22 +27,21 @@ module.exports = {
       options: {
         host: config.manifestSiteUrl,
         sitemap: 'https://hairandhair.pl/sitemap/sitemap-index.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
     },
     'gatsby-plugin-offline',
     {
-      resolve: "gatsby-plugin-google-tagmanager",
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        id: "GTM-PS3DL5F",
+        id: 'GTM-PS3DL5F',
         // Defaults to false meaning GTM will only be loaded in production.
         includeInDevelopment: false,
         // datalayer to be set before GTM is loaded
         // should be an object or a function that is executed in the browser
         //
         // Defaults to null
-        // defaultDataLayer: { platform: "gatsby" },
-
+        defaultDataLayer: { platform: 'gatsby' },
         // Specify optional GTM environment details.
         // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
         // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
@@ -50,7 +49,7 @@ module.exports = {
         // // Defaults to gatsby-route-change
         // routeChangeEventName: "YOUR_ROUTE_CHANGE_EVENT_NAME",
         // // Defaults to false
-        // enableWebVitalsTracking: true,
+        enableWebVitalsTracking: true,
         // // Defaults to https://www.googletagmanager.com
         // selfHostedOrigin: "YOUR_SELF_HOSTED_ORIGIN",
       },

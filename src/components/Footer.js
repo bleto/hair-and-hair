@@ -6,7 +6,10 @@ export default function Footer() {
       <ul className="copyright">
         <li>&copy; Hair&Hair</li>
         <li>
-          Created by: <a href="https://github.com/bleto" target="_blank" rel="noreferrer">Softbeat</a>
+          Created by:{' '}
+          <a href="https://github.com/bleto" target="_blank" rel="noreferrer">
+            Softbeat
+          </a>
         </li>
       </ul>
     </footer>

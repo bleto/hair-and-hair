@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-export default function Nav({ onMenuToggle = () => { } }) {
+export default function Nav({ onMenuToggle = () => {} }) {
   return (
     <nav id="nav">
       <ul>
         <li className="special">
           <a
             href="#menu"
-            onClick={e => {
+            onClick={(e) => {
               e.preventDefault();
               onMenuToggle();
             }}
@@ -30,7 +30,7 @@ export default function Nav({ onMenuToggle = () => { } }) {
             </ul>
             <a
               className="close"
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
                 onMenuToggle();
               }}
