@@ -27,6 +27,9 @@ export default function Nav({ onMenuToggle = () => {} }) {
               <li>
                 <Link to="/rezerwuj">Rezerwuj</Link>
               </li>
+              <li>
+                <Link to="/kontakt">Kontakt</Link>
+              </li>
             </ul>
             <a
               className="close"

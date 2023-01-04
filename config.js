@@ -35,7 +35,7 @@ module.exports = {
       style: 'brands',
       icon: 'fa-instagram',
       name: 'Instagram',
-      url: 'https://www.instagram.com/etrycholog',
+      url: 'https://www.instagram.com/hairandhair_trycholog',
     },
   ],
 };

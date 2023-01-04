@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Layout from '../components/Layout';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import { createWidgetContainer, createIframe } from '../utils/booksy';
 
 const BookingPage = () => {
@@ -39,7 +39,7 @@ const BookingPage = () => {
 
   return (
     <Layout>
-      <SEO title="Rezerwacja" description="Zarezerwuj wizytę" />
+      <Seo title="Rezerwacja" description="Zarezerwuj wizytę" />
       <article id="main">
         <header>
           <h2>Rezerwuj</h2>

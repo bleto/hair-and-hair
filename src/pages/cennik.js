@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Layout from '../components/Layout';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 
 const PricingPage = () => (
   <Layout>
-    <SEO title="Cennik" description="Znajdź coś dla siebie" />
+    <Seo title="Cennik" description="Znajdź coś dla siebie" />
     <article id="main">
       <header>
         <h2>Cennink</h2>
@@ -42,7 +42,7 @@ const PricingPage = () => (
                 </td>
                 <td className="nowrap centered">~60 min</td>
                 <td className="nowrap centered">
-                  <b className="gold">120 PLN</b>
+                  <b className="gold">150 PLN</b>
                 </td>
               </tr>
               <tr>
@@ -77,7 +77,7 @@ const PricingPage = () => (
                 </td>
                 <td className="nowrap centered">~70 min</td>
                 <td className="nowrap centered">
-                  <b className="gold">160 - 190 PLN</b>
+                  <b className="gold">170 - 190 PLN</b>
                 </td>
               </tr>
               <tr>
@@ -130,7 +130,7 @@ const PricingPage = () => (
                   <b className="gold">280 PLN</b>
                 </td>
               </tr>
-              <tr>
+              {/* <tr>
                 <td className="centered">
                   <b>Mezoterapia mikroigłowa - dermapen + oczyszcznie skóry</b>
                 </td>
@@ -155,11 +155,11 @@ const PricingPage = () => (
                     <li>łysienie telogenowe</li>
                   </ul>
                 </td>
-                <td className="nowrap centered">~80 min</td>
+                <td className="nowrap centered">~60 min</td>
                 <td className="nowrap centered">
                   <b className="gold">320 PLN</b>
                 </td>
-              </tr>
+              </tr> */}
               <tr>
                 <td className="centered">
                   <b>Zabieg oczyszczania BASIC</b>

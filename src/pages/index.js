@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Scroll from '../components/Scroll';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 
 import pic1 from '../assets/images/pic01.webp';
 import pic2 from '../assets/images/pic02.webp';
@@ -11,7 +11,7 @@ import config from '../../config';
 
 const IndexPage = () => (
   <Layout>
-    <SEO
+    <Seo
       title="Strona główna"
       description="Witam Cię w HAIR&HAIR - miejsce dla zdrowych włosów i skóry"
     />
