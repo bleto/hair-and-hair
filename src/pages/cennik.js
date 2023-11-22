@@ -8,7 +8,7 @@ const PricingPage = () => (
     <Seo title="Cennik" description="Znajdź coś dla siebie" />
     <article id="main">
       <header>
-        <h2>Cennink</h2>
+        <h2>Cennik</h2>
         <p>znajdź coś dla siebie</p>
       </header>
       <section className="wrapper style5">
@@ -42,7 +42,7 @@ const PricingPage = () => (
                 </td>
                 <td className="nowrap centered">~60 min</td>
                 <td className="nowrap centered">
-                  <b className="gold">150 PLN</b>
+                  <b className="gold">200 PLN</b>
                 </td>
               </tr>
               <tr>
@@ -58,7 +58,7 @@ const PricingPage = () => (
                 </td>
                 <td className="nowrap centered">~30 min</td>
                 <td className="nowrap centered">
-                  <b className="gold">60 PLN</b>
+                  <b className="gold">100 PLN</b>
                 </td>
               </tr>
               <tr>
@@ -77,7 +77,7 @@ const PricingPage = () => (
                 </td>
                 <td className="nowrap centered">~70 min</td>
                 <td className="nowrap centered">
-                  <b className="gold">170 - 190 PLN</b>
+                  <b className="gold">190 PLN</b>
                 </td>
               </tr>
               <tr>
@@ -127,7 +127,7 @@ const PricingPage = () => (
                 </td>
                 <td className="nowrap centered">~90 min</td>
                 <td className="nowrap centered">
-                  <b className="gold">280 PLN</b>
+                  <b className="gold">290 PLN</b>
                 </td>
               </tr>
               {/* <tr>
@@ -160,7 +160,7 @@ const PricingPage = () => (
                   <b className="gold">320 PLN</b>
                 </td>
               </tr> */}
-              <tr>
+              {/* <tr>
                 <td className="centered">
                   <b>Zabieg oczyszczania BASIC</b>
                 </td>
@@ -174,7 +174,7 @@ const PricingPage = () => (
                 <td className="nowrap centered">
                   <b className="gold">110 PLN</b>
                 </td>
-              </tr>
+              </tr> */}
               <tr>
                 <td className="centered">
                   <b>Zabieg pielęgnacyjny Beauty Expert Emmebi</b>
@@ -207,7 +207,7 @@ const PricingPage = () => (
                 </td>
                 <td className="nowrap centered">~70 min</td>
                 <td className="nowrap centered">
-                  <b className="gold">140 PLN</b>
+                  <b className="gold">160 PLN</b>
                 </td>
               </tr>
             </tbody>

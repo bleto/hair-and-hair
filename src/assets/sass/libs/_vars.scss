@@ -1,3 +1,6 @@
+// globals
+$breakpoints: ();
+
 // Misc.
 $misc: (
 	max-spotlights:		10,
@@ -120,10 +123,10 @@ $palette: (
 
 	accent8: (
 		// bg:				mix(#000, #AA8E5D, 98%),
-		bg:				#685433,
-		fg-bold:		mix(#0F0F0F, #ffffff, 10%),
-		fg:				mix(#0F0F0F, #ffffff, 20%),
-		fg-light:		mix(#0F0F0F, #ffffff, 60%),
+		bg:				#b8b1a7,
+		fg-bold:		mix(#0F0F0F, #111010, 10%),
+		fg:				mix(#0F0F0F, #111010, 20%),
+		fg-light:		mix(#0F0F0F, #111010, 60%),
 		border:			rgba(0,0,0,0.125),
 		border-bg:		rgba(255,255,255,0.075),
 		border2:		rgba(0,0,0,0.25),
