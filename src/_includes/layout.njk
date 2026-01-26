@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="{% if locale == 'en' %}en{% else %}pl{% endif %}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#27252a" />
+  
+  <title>{{ site.siteTitle }}{% if title %} – {{ title }}{% endif %}</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.siteDescription }}{% endif %}" />
+  <meta name="keywords" content="{{ site.siteKeywords }}" />
+  <meta name="author" content="{{ site.siteTitle }}" />
+  <link rel="canonical" href="{{ site.siteUrl }}{{ page.url }}" />
+  
+  <!-- Alternate language versions -->
+  <link rel="alternate" hreflang="pl" href="{{ site.siteUrl }}{{ page.url | alternateUrl('pl') }}" />
+  <link rel="alternate" hreflang="en" href="{{ site.siteUrl }}{{ page.url | alternateUrl('en') }}" />
+  <link rel="alternate" hreflang="x-default" href="{{ site.siteUrl }}{{ page.url | alternateUrl('pl') }}" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.siteUrl }}{{ page.url }}" />
+  <meta property="og:title" content="{{ site.siteTitle }}{% if title %} – {{ title }}{% endif %}" />
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.siteDescription }}{% endif %}" />
+  <meta property="og:image" content="{{ site.siteUrl }}assets/images/backgrounds/hah_1.jpg" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:site_name" content="{{ site.siteTitle }}" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="{{ site.siteUrl }}{{ page.url }}" />
+  <meta property="twitter:title" content="{{ site.siteTitle }}{% if title %} – {{ title }}{% endif %}" />
+  <meta property="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.siteDescription }}{% endif %}" />
+  <meta property="twitter:image" content="{{ site.siteUrl }}assets/images/backgrounds/hah_1.jpg" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png?v=2" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png?v=2" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png?v=2" />
+  <link rel="icon" href="/assets/images/favicons/favicon.ico?v=2" />
+  <link rel="manifest" href="/assets/images/favicons/site.webmanifest?v=2" />
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- vendors -->
+  <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/assets/vendors/animate/animate.min.css" />
+  <link rel="stylesheet" href="/assets/vendors/animate/custom-animate.css" />
+  <link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="/assets/vendors/jarallax/jarallax.css" />
+  <link rel="stylesheet" href="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+  <link rel="stylesheet" href="/assets/vendors/nouislider/nouislider.min.css" />
+  <link rel="stylesheet" href="/assets/vendors/nouislider/nouislider.pips.css" />
+  <link rel="stylesheet" href="/assets/vendors/odometer/odometer.min.css" />
+  <link rel="stylesheet" href="/assets/vendors/swiper/swiper.min.css" />
+  <link rel="stylesheet" href="/assets/vendors/mellis-icons/style.css">
+  <link rel="stylesheet" href="/assets/vendors/tiny-slider/tiny-slider.min.css" />
+  <link rel="stylesheet" href="/assets/vendors/reey-font/stylesheet.css" />
+  <link rel="stylesheet" href="/assets/vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="/assets/vendors/owl-carousel/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="/assets/vendors/bxslider/jquery.bxslider.css" />
+  <link rel="stylesheet" href="/assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="/assets/vendors/vegas/vegas.min.css" />
+  <link rel="stylesheet" href="/assets/vendors/jquery-ui/jquery-ui.css" />
+  <link rel="stylesheet" href="/assets/vendors/timepicker/timePicker.css" />
+  <link rel="stylesheet" href="/assets/vendors/nice-select/nice-select.css" />
+  <link rel="stylesheet" href="/assets/vendors/twenty-twenty/twentytwenty.css" />
+
+  <!-- template -->
+  <link rel="stylesheet" href="/assets/css/mellis.css" />
+  <link rel="stylesheet" href="/assets/css/mellis-responsive.css" />
+  <link rel="stylesheet" href="/assets/css/language-switcher.css" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "{{ site.siteTitle }}",
+    "description": "{{ site.siteDescription }}",
+    "url": "{{ site.siteUrl }}",
+    "telephone": "+48{{ site.phone }}",
+    "email": "{{ site.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Ruczaj 17A lokal B",
+      "addressLocality": "Kraków",
+      "postalCode": "30-409",
+      "addressCountry": "PL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "50.02585",
+      "longitude": "19.91899"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "{{ site.links.facebook }}",
+      "{{ site.links.instagram }}"
+    ],
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+
+<body>
+  <div class="preloader">
+    <div class="preloader__image"></div>
+  </div>
+
+  <div class="page-wrapper">
+    {% include "header.njk" %}
+
+    <main id="main-content" role="main">
+      {{ content | safe }}
+    </main>
+
+    {% include "footer.njk" %}
+  </div>
+</body>
+</html>

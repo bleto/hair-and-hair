@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Blokowanie folderów pomocniczych
+Disallow: /assets/inc/
+Disallow: /assets/vendors/
+
+# Sitemap
+Sitemap: https://hairandhair.pl/sitemap.xml

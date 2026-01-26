@@ -1,0 +1,156 @@
+<footer class="site-footer">
+  <div class="site-footer__shape-1 float-bob-x">
+    <img src="/assets/images/shapes/site-footer-shape-1.png" alt="">
+  </div>
+  <div class="site-footer__shape-2 float-bob-y">
+    <img src="/assets/images/shapes/site-footer-shape-2.png" alt="">
+  </div>
+
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="row">
+        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+          <div class="footer-widget__column footer-widget__contact-box">
+            <div class="footer-widget__title-box">
+              <h4 class="footer-widget__title">{{ 'footer.contact' | t(locale) }}</h4>
+            </div>
+            <div class="footer-widget__contact">
+              <a href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i> {{ site.email }}</a>
+              <a href="tel:{{ site.phone }}"><i class="fas fa-phone-alt"></i> +48 {{ site.phone }}</a>
+            </div>
+          </div>
+        </div>
+
+         <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+            <div class="footer-widget__column footer-widget__timing">
+                <div class="footer-widget__title-box">
+                    <h4 class="footer-widget__title">{{ 'footer.address' | t(locale) }}</h4>
+                </div>
+                <p class="footer-widget__title2">
+                  {{ 'common.address' | t(locale) }}
+                </p>
+                <p class="footer-widget__title2">
+                   <br> {{ 'common.postalCode' | t(locale) }} 
+                   {{ 'common.city' | t(locale) }} 
+                </p>
+            </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+          <div class="footer-widget__column footer-widget__links">
+            <div class="footer-widget__title-box">
+              <h4 class="footer-widget__title">{{ 'footer.links' | t(locale) }}</h4>
+            </div>
+            <ul class="footer-widget__links-list list-unstyled">
+              <li><a href="{% if locale == 'en' %}/en/training/{% else %}/training/{% endif %}">{{ 'nav.training' | t(locale) }}</a></li>
+              <li><a href="{% if locale == 'en' %}/en/pricing/{% else %}/pricing/{% endif %}">{{ 'footer.pricing' | t(locale) }}</a></li>
+              <li><a href="{% if locale == 'en' %}/en/contact/{% else %}/contact/{% endif %}">{{ 'nav.contact' | t(locale) }}</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+          <div class="footer-widget__column footer-widget__social-box">
+            <div class="site-footer__social">
+              <a href="{{ site.links.facebook }}"><i class="fab fa-facebook"></i></a>
+              <a href="{{ site.links.instagram }}"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="site-footer__bottom-inner">
+            <p class="site-footer__bottom-text">{{ 'footer.copyright' | t(locale) }} {{ site.year }} by <a href="https://github.com/bleto">bleto</a></p>
+            <ul class="list-unstyled site-footer__bottom-menu">
+              <li><a href="#">{{ 'footer.privacy' | t(locale) }}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<div class="mobile-nav__wrapper">
+  <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+  <div class="mobile-nav__content">
+    <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+    <div class="logo-box">
+      <a href="/" aria-label="logo image"><img src="/assets/images/logo/logo_white.svg" width="90" alt="" /></a>
+    </div>
+
+    <div class="mobile-nav__container"></div>
+
+    <ul class="mobile-nav__contact list-unstyled">
+      <li>
+        <i class="fa fa-envelope"></i>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </li>
+      <li>
+        <i class="fa fa-phone-alt"></i>
+        <a href="tel:{{ site.phone }}">+ 48 {{ site.phone }}</a>
+      </li>
+    </ul>
+
+    <div class="mobile-nav__top">
+      <div class="mobile-nav__social">
+        <a href="{{ site.links.facebook }}" class="fab fa-facebook-square"></a>
+        <a href="{{ site.links.instagram }}" class="fab fa-instagram"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="search-popup">
+  <div class="search-popup__overlay search-toggler"></div>
+  <div class="search-popup__content">
+    <form action="#">
+      <label for="search" class="sr-only">search here</label>
+      <input type="text" id="search" placeholder="Search Here..." />
+      <button type="submit" aria-label="search submit" class="thm-btn">
+        <i class="icon-magnifying-glass"></i>
+      </button>
+    </form>
+  </div>
+</div>
+
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+<script src="/assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+<script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendors/jarallax/jarallax.min.js"></script>
+<script src="/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+<script src="/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+<script src="/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+<script src="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="/assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+<script src="/assets/vendors/nouislider/nouislider.min.js"></script>
+<script src="/assets/vendors/odometer/odometer.min.js"></script>
+<script src="/assets/vendors/swiper/swiper.min.js"></script>
+<script src="/assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+<script src="/assets/vendors/wnumb/wNumb.min.js"></script>
+<script src="/assets/vendors/wow/wow.js"></script>
+<script src="/assets/vendors/isotope/isotope.js"></script>
+<script src="/assets/vendors/countdown/countdown.min.js"></script>
+<script src="/assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="/assets/vendors/bxslider/jquery.bxslider.min.js"></script>
+<script src="/assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="/assets/vendors/vegas/vegas.min.js"></script>
+<script src="/assets/vendors/jquery-ui/jquery-ui.js"></script>
+<script src="/assets/vendors/timepicker/timePicker.js"></script>
+<script src="/assets/vendors/circleType/jquery.circleType.js"></script>
+<script src="/assets/vendors/circleType/jquery.lettering.min.js"></script>
+<script src="/assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
+<script src="/assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+<script src="/assets/vendors/twenty-twenty/twentytwenty.js"></script>
+<script src="/assets/vendors/twenty-twenty/jquery.event.move.js"></script>
+
+<!-- Menu locale handler -->
+<script src="/assets/js/menu-locale.js"></script>
+<script src="/assets/js/mellis.js"></script>

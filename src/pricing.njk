@@ -1,0 +1,298 @@
+---
+pagination:
+  data: translations.locales
+  size: 1
+  alias: locale
+permalink: "{% if locale == 'en' %}/en/pricing/{% else %}/pricing/{% endif %}"
+layout: layout.njk
+eleventyComputed:
+  title: "{{ 'pricing.title' | t(locale) }}"
+  description: "{{ 'pricing.description' | t(locale) }}"
+---
+
+
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(/assets/images/backgrounds/hah_3.jpg);">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <ul class="thm-breadcrumb list-unstyled">
+                <li>
+                    <a href="{% if locale == 'en' %}/en/{% else %}/{% endif %}">{{ 'pricing.breadcrumb.home' | t(locale) }}</a>
+                </li>
+                <li><span>/</span></li>
+                <li>{{ 'pricing.breadcrumb.current' | t(locale) }}</li>
+            </ul>
+            <h1 style="color: #fff">{{ 'pricing.title' | t(locale) }}</h1>
+        </div>
+    </div> 
+</section>
+<!--Page Header End-->
+
+<!--Services Two Start-->
+<section class="services-two">
+    <div class="container">
+        <div class="services-two__inner">
+            <div class="services-two__shape-1 float-bob-x">
+                <img src="/assets/images/shapes/services-two-shape-1.png" alt="">
+            </div>
+            <div class="row">
+                <!--Services Two Single Start-->
+                <div class="col-xl-6 col-lg-6">
+                    <div class="services-two__single">
+                        <h3 class="services-two__title">{{ 'pricing.pricingConsultations.title' | t(locale) }}</h3>
+                        <ul class="list-unstyled services-two__list">
+                            {% for it in services.consultations %}
+                            <li>
+                                <div class="services-two__services-name">
+                                    <h3><a href="services.html">{{ it.name | t(locale) }}</a></h3>
+                                    <p>{{ it.duration }}</p>
+                                </div>
+                                <div class="services-two__services-price">
+                                    <h4>{{ it.price }}</h4>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!--Services Two Single End-->
+                <!--Services Two Single Start-->
+                <div class="col-xl-6 col-lg-6">
+                    <div class="services-two__single">
+                        <h3 class="services-two__title">{{ 'pricing.pricingTreatments.title' | t(locale) }}</h3>
+                        <ul class="list-unstyled services-two__list">
+                            {% for it in services.treatments %}
+                            <li>
+                                <div class="services-two__services-name">
+                                    <h3><a href="services.html">{{ it.name | t(locale) }}</a></h3>
+                                    <p>{{ it.duration }}</p>
+                                </div>
+                                <div class="services-two__services-price">
+                                    <h4>{{ it.price }}</h4>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!--Services Two Single End-->
+            </div>
+            <br>
+            <div class="row">
+                 <!--Services Two Single Start-->
+                <div class="col-xl-6 col-lg-6 offset-xl-3 offset-lg-3">
+                    <div class="services-two__single">
+                        <h3 class="services-two__title">{{ 'pricing.headSPA.title' | t(locale) }}</h3>
+                        <ul class="list-unstyled services-two__list">
+                            {% for it in services.headSpa %}
+                            <li>
+                                <div class="services-two__services-name">
+                                    <h3><a href="services.html">{{ it.name | t(locale) }}</a></h3>
+                                    <p>{{ it.duration }}</p>
+                                </div>
+                                <div class="services-two__services-price">
+                                    <h4>{{ it.price }}</h4>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!--Services Two Single End-->
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="services-two__btn-box">
+                        <a href="{% if locale == 'en' %}/en/bookings{% else %}/bookings{% endif %}" class="thm-btn services-two__btn">
+                            {{ 'pricing.bookNow' | t(locale) }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Services Two End-->
+
+<!--Pricing Plans Start-->
+<section class="pricing-plan">
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="section-title__tagline">{{ 'pricing.startingPacks.title' | t(locale) }}</span>
+            <h2 class="section-title__title">{{ 'pricing.startingPacks.subtitle' | t(locale) }}</h2>
+        </div>
+        <div class="row">
+            <!--Pricing Plan Single Start-->
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <div class="pricing-plan__single">
+                    <div class="pricing-plan__top">
+                        <h3 class="pricing-plan__title">
+                            {{ 'pricing.startingPacks.package1.name' | t(locale) }}
+                        </h3>
+                        <div class="pricing-plan__icon">
+                            <span class="icon-spa-candles"></span>
+                        </div>
+                    </div>
+                    <div class="pricing-plan__bottom">
+                        <p class="pricing-plan__per-day"><span>450 zł</span>/ 120min</p>
+                        <ul class="pricing-plan__points list-unstyled">
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package1.option1' | t(locale) }}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package1.option2' | t(locale) }}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package1.option3' | t(locale) }}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package1.option4' | t(locale) }}</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="pricing-plan__btn-box">
+                            <a href="contact.html" class="pricing-plan__btn thm-btn">
+                                {{ 'pricing.startingPacks.cta' | t(locale) }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Pricing Plan Single End-->
+            <!--Pricing Plan Single Start-->
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <div class="pricing-plan__single">
+                    <div class="pricing-plan__top">
+                        <h3 class="pricing-plan__title">
+                             {{ 'pricing.startingPacks.package2.name' | t(locale) }}
+                        </h3>
+                        <div class="pricing-plan__icon">
+                            <span class="icon-flower"></span>
+                        </div>
+                    </div>
+                    <div class="pricing-plan__bottom">
+                        <p class="pricing-plan__per-day"><span>440 zł</span>/ 120min</p>
+                        <ul class="pricing-plan__points list-unstyled">
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package2.option1' | t(locale) }}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package2.option2' | t(locale) }}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package2.option3' | t(locale) }}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package2.option4' | t(locale) }}</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="pricing-plan__btn-box">
+                            <a href="contact.html" class="pricing-plan__btn thm-btn">
+                                {{ 'pricing.startingPacks.cta' | t(locale) }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Pricing Plan Single End-->
+            <!--Pricing Plan Single Start-->
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <div class="pricing-plan__single">
+                    <div class="pricing-plan__top">
+                        <h3 class="pricing-plan__title">
+                             {{ 'pricing.startingPacks.package3.name' | t(locale) }}
+                        </h3>
+                        <div class="pricing-plan__icon">
+                            <span class="icon-spa-1"></span>
+                        </div>
+                    </div>
+                    <div class="pricing-plan__bottom">
+                        <p class="pricing-plan__per-day"><span>490 zł</span>/ 150min</p>
+                        <ul class="pricing-plan__points list-unstyled">
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package3.option1' | t(locale) }}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package3.option2' | t(locale) }}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package3.option3' | t(locale) }}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package3.option4' | t(locale) }}</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="pricing-plan__btn-box">
+                            <a href="contact.html" class="pricing-plan__btn thm-btn">
+                                {{ 'pricing.startingPacks.cta' | t(locale) }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Pricing Plan Single End-->
+        </div>
+    </div>
+</section>
+<!--Pricing Plans End-->

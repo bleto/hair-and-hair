@@ -1,0 +1,52 @@
+---
+pagination:
+  data: translations.locales
+  size: 1
+  alias: locale
+permalink: "{% if locale == 'en' %}/en/404.html{% else %}/404.html{% endif %}"
+layout: layout.njk
+eleventyComputed:
+  title: "{{ 'notFound.title' | t(locale) }}"
+---
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(/assets/images/backgrounds/bg_404.jpg);">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <ul class="thm-breadcrumb list-unstyled">
+                <li><a href="{% if locale == 'en' %}/en/{% else %}/{% endif %}">{{ 'contact.breadcrumb.home' | t(locale) }}</a></li>
+                <li><span>/</span></li>
+                <li>{{ 'notFound.heading' | t(locale) }}</li>
+            </ul>
+            <h2>{{ 'notFound.subtitle' | t(locale) }}</h2>
+        </div>
+    </div> 
+</section>
+<!--Page Header End-->
+
+<!--Error Page Start-->
+<section class="get-free">
+    <div class="get-free__wrap">
+        <div class="get-free__shape-2 float-bob-y">
+            <img src="/assets/images/shapes/get-free-shape-2.png" alt="">
+        </div>
+        <div class="get-free__bg" style="background-image: url();">
+        </div>
+        <div class="container">
+            <div class="get-free__inner">
+                <h2 class="get-free__title">{{ 'notFound.heading' | t(locale) }}</h2>
+                <h3 class="get-free__sub-title">{{ 'notFound.subtitle' | t(locale) }}</h3>
+
+                <div class="get-free__btn-box">
+                    <div class="get-free__shape-1 float-bob-x">
+                        <img src="/assets/images/shapes/get-free-shape-1.png" alt="">
+                    </div>
+                    <a href="{% if locale == 'en' %}/en/{% else %}/{% endif %}" class="get-free__btn thm-btn">{{ 'notFound.homeButton' | t(locale) }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Error Page End-->
