@@ -1,0 +1,74 @@
+name: 🔄 Refresh Instagram Token
+
+# Automatyczne odświeżanie tokena Instagram co 30 dni
+on:
+  schedule:
+    # Uruchamia się 1. i 15. każdego miesiąca o 00:00 UTC
+    - cron: '0 0 1,15 * *'
+
+  # Możliwość ręcznego uruchomienia z GitHub UI
+  workflow_dispatch:
+
+jobs:
+  refresh-token:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🔄 Refresh Instagram Access Token
+        id: refresh
+        run: |
+          echo "🔍 Starting Instagram token refresh..."
+
+          # Odśwież token używając Instagram API
+          RESPONSE=$(curl -s -X GET \
+            "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${{ secrets.INSTAGRAM_ACCESS_TOKEN }}")
+
+          # Wyciągnij nowy token z response
+          NEW_TOKEN=$(echo $RESPONSE | jq -r '.access_token')
+          EXPIRES_IN=$(echo $RESPONSE | jq -r '.expires_in')
+
+          if [ "$NEW_TOKEN" = "null" ] || [ -z "$NEW_TOKEN" ]; then
+            echo "❌ Failed to refresh token"
+            echo "Response: $RESPONSE"
+            exit 1
+          fi
+
+          echo "✅ Token refreshed successfully!"
+          echo "📅 Expires in: $(($EXPIRES_IN / 86400)) days"
+
+          # Zapisz token do output (będzie użyty w następnym kroku)
+          echo "new_token=$NEW_TOKEN" >> $GITHUB_OUTPUT
+          echo "expires_in_days=$(($EXPIRES_IN / 86400))" >> $GITHUB_OUTPUT
+
+      - name: 🔐 Update GitHub Secret
+        uses: gliech/create-github-secret-action@v1
+        with:
+          name: INSTAGRAM_ACCESS_TOKEN
+          value: ${{ steps.refresh.outputs.new_token }}
+          pa_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+      - name: 📝 Update last refresh date
+        uses: gliech/create-github-secret-action@v1
+        with:
+          name: INSTAGRAM_TOKEN_LAST_REFRESH
+          value: ${{ steps.refresh.outputs.expires_in_days }}
+          pa_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+      - name: 🚀 Trigger GitHub Pages Deploy
+        run: |
+          echo "✅ Token updated in GitHub Secrets"
+          echo "🔄 GitHub Pages will use the new token on next deploy"
+          echo ""
+          echo "📊 Summary:"
+          echo "  - New token expires in: ${{ steps.refresh.outputs.expires_in_days }} days"
+          echo "  - Next refresh: in ~14 days"
+          echo "  - GitHub Secret updated: INSTAGRAM_ACCESS_TOKEN"
+
+      - name: 📧 Notify on failure
+        if: failure()
+        run: |
+          echo "❌ Instagram token refresh failed!"
+          echo "Please check the workflow logs and refresh token manually if needed."

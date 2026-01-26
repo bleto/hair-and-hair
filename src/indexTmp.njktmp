@@ -1,0 +1,637 @@
+---
+pagination:
+  data: translations.locales
+  size: 1
+  alias: locale
+permalink: "{% if locale == 'en' %}/en/{% else %}/{% endif %}"
+layout: layout.njk
+eleventyComputed:
+  title: "{{ 'home.title' | t(locale) }}"
+  description: "{{ 'home.description' | t(locale) }}"
+---
+
+<!--Main Slider Start-->
+<section class="main-slider-two">
+    <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+"effect": "fade",
+"pagination": {
+"el": "#main-slider-pagination",
+"type": "bullets",
+"clickable": true
+},
+"navigation": {
+"nextEl": "#main-slider__swiper-button-next",
+"prevEl": "#main-slider__swiper-button-prev"
+},
+"autoplay": {
+"delay": 5000
+}}'>
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="image-layer-two"
+                    style="background-image: url(/assets/images/backgrounds/hah_1.jpg);"></div>
+                <!-- /.image-layer -->
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="main-slider-two__content">
+                                <p class="main-slider-two__sub-title">{{ 'home.slider.slide1.subtitle' | t(locale) }}</p>
+                                <h2 class="main-slider-two__title">{{ 'home.slider.slide1.title' | t(locale) | safe }}</h2>
+                                <div class="main-slider-two__btn-box">
+                                    <a href="services.html" class="thm-btn main-slider-two__btn">{{ 'home.slider.slide1.button' | t(locale) }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="image-layer-two"
+                    style="background-image: url(/assets/images/backgrounds/hah_22.jpg);"></div>
+                <!-- /.image-layer -->
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="main-slider-two__content">
+                                <p class="main-slider-two__sub-title">{{ 'home.slider.slide2.subtitle' | t(locale) }}</p>
+                                <h2 class="main-slider-two__title">{{ 'home.slider.slide2.title' | t(locale) | safe }}</h2>
+                                <div class="main-slider-two__btn-box">
+                                    <a href="services.html" class="thm-btn main-slider-two__btn">{{ 'home.slider.slide2.button' | t(locale) }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="image-layer-two"
+                    style="background-image: url(/assets/images/backgrounds/hah_3.jpg);"></div>
+                <!-- /.image-layer -->
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="main-slider-two__content">
+                                <p class="main-slider-two__sub-title">{{ 'home.slider.slide3.subtitle' | t(locale) }}</p>
+                                <h2 class="main-slider-two__title">{{ 'home.slider.slide3.title' | t(locale) | safe }}</h2>
+                                <div class="main-slider-two__btn-box">
+                                    <a href="services.html" class="thm-btn main-slider-two__btn">{{ 'home.slider.slide3.button' | t(locale) }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="swiper-pagination" id="main-slider-pagination"></div>
+        <!-- If we need navigation buttons -->
+
+
+    </div>
+</section>
+<!--Main Slider End-->
+
+<!--Our Intro Start-->
+<section class="our-intro">
+    <div class="our-intro__shape-1 float-bob-y">
+        <img src="/assets/images/shapes/our-intro-shape-1.png" alt="Dekoracyjny element graficzny" role="presentation">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="our-intro__left">
+                    <div class="our-intro__img-box wow slideInLeft" data-wow-delay="100ms"
+                        data-wow-duration="2500ms">
+                        <div class="our-intro__img">
+                            <img src="/assets/images/resources/natalia_3.jpg" alt="{{ 'home.intro.imageAlt' | t(locale) }}" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="our-intro__right">
+                    <div class="section-title text-left">
+                        <span class="section-title__tagline">{{ 'home.intro.tagline' | t(locale) }}</span>
+                        <h2 class="section-title__title">{{ 'home.intro.title' | t(locale) }}</h2>
+                    </div>
+                    <p class="our-intro__text">
+                        {{ 'home.intro.text' | t(locale) | safe }}
+                    </p>
+                    <div class="our-intro__points-and-spa-center">
+                        <div class="our-intro__points-box">
+                            <ul class="our-intro__points list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <span class="fa fa-check"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>{{ 'home.intro.points.experience' | t(locale) }}</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fa fa-check"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>{{ 'home.intro.points.lecturer' | t(locale) }}</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fa fa-check"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>{{ 'home.intro.points.nursing' | t(locale) }}</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fa fa-check"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>{{ 'home.intro.points.collaboration' | t(locale) }}</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="welcome-one__btn-box">
+                                <a href="services.html" class="welcome-one__btn thm-btn">{{ 'home.intro.button' | t(locale) }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Our Intro End-->
+
+        <!--Counter One Start-->
+<section class="counter-one">
+    <div class="counter-one__bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+        style="background-image: url(/assets/images/backgrounds/red_hair.jpg);">
+    </div>
+    <div class="container">
+        <div class="row">
+            <!--Counter One Single Start-->
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="counter-one__single">
+                    <div class="counter-one__icon">
+                        <span class="icon-herbal"></span>
+                    </div>
+                    <div class="counter-one__content-box">
+                        <div class="counter-one__count-box">
+                            <h3 class="odometer" data-count="8">00</h3>
+                        </div>
+                        <p class="counter-one__text">{{ 'home.counter.experience' | t(locale) }}</p>
+                    </div>
+                </div>
+            </div>
+            <!--Counter One Single End-->
+            <!--Counter One Single Start-->
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="counter-one__single counter-one__single-2">
+                    <div class="counter-one__icon">
+                        <span class="icon-lotus-1"></span>
+                    </div>
+                    <div class="counter-one__content-box">
+                        <div class="counter-one__count-box">
+                            <h3 class="odometer" data-count="4">00</h3>
+                        </div>
+                        <p class="counter-one__text">{{ 'home.counter.years' | t(locale) }}</p>
+                    </div>
+                </div>
+            </div>
+            <!--Counter One Single End-->
+            <!--Counter One Single Start-->
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="counter-one__single counter-one__single-3">
+                    <div class="counter-one__icon">
+                        <span class="icon-massage-1"></span>
+                    </div>
+                    <div class="counter-one__content-box">
+                        <div class="counter-one__count-box">
+                            <h3 class="odometer" data-count="150">00</h3>
+                        </div>
+                        <p class="counter-one__text">{{ 'home.counter.treatments' | t(locale) }}</p>
+                    </div>
+                </div>
+            </div>
+            <!--Counter One Single End-->
+            <!--Counter One Single Start-->
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="counter-one__single counter-one__single-4">
+                    <div class="counter-one__icon">
+                        <span class="icon-customer-service"></span>
+                    </div>
+                    <div class="counter-one__content-box">
+                        <div class="counter-one__count-box">
+                            <h3 class="odometer" data-count="4000">00</h3>
+                        </div>
+                        <p class="counter-one__text">{{ 'home.counter.consultations' | t(locale) }}</p>
+                    </div>
+                </div>
+            </div>
+            <!--Counter One Single End-->
+        </div>
+    </div>
+</section>
+<!--Counter One End-->
+
+
+<!--Process One Start-->
+<section class="process-one">
+    <div class="container">
+        <div class="process-one__inner">
+            <div class="process-one__shape-1"></div>
+            <div class="section-title text-center">
+                <span class="section-title__tagline">{{ 'home.process.tagline' | t(locale) }}</span>
+                <h2 class="section-title__title">{{ 'home.process.title' | t(locale) }}</h2>
+            </div>
+            <div class="row">
+                <!--Process One Single Start-->
+                <div class="col-xl-4 col-lg-4">
+                    <div class="process-one__single">
+                        <div class="process-one__img-box">
+                            <div class="process-one__img">
+                                <img src="/assets/images/resources/step_1_188x188.jpg" alt="">
+                            </div>
+                            <div class="process-one__count"></div>
+                        </div>
+                        <h3 class="process-one__title"><a href="services.html">{{ 'home.process.step1.title' | t(locale) }}</a></h3>
+                        <p class="process-one__text">{{ 'home.process.step1.text' | t(locale) }}</p>
+                    </div>
+                </div>
+                <!--Process One Single End-->
+                <!--Process One Single Start-->
+                <div class="col-xl-4 col-lg-4">
+                    <div class="process-one__single">
+                        <div class="process-one__img-box">
+                            <div class="process-one__img">
+                                <img src="/assets/images/resources/step_2_188x188.jpg" alt="">
+                            </div>
+                            <div class="process-one__count"></div>
+                        </div>
+                        <h3 class="process-one__title"><a href="services.html">{{ 'home.process.step2.title' | t(locale) }}</a></h3>
+                        <p class="process-one__text">{{ 'home.process.step2.text' | t(locale) }}</p>
+                    </div>
+                </div>
+                <!--Process One Single End-->
+                <!--Process One Single Start-->
+                <div class="col-xl-4 col-lg-4">
+                    <div class="process-one__single">
+                        <div class="process-one__img-box">
+                            <div class="process-one__img">
+                                <img src="/assets/images/resources/step_3_188x188.jpg" alt="">
+                            </div>
+                            <div class="process-one__count"></div>
+                        </div>
+                        <h3 class="process-one__title"><a href="services.html">{{ 'home.process.step3.title' | t(locale) }}</a></h3>
+                        <p class="process-one__text">{{ 'home.process.step3.text' | t(locale) }}</p>
+                    </div>
+                </div>
+                <!--Process One Single End-->
+            </div>
+        </div>
+    </div>
+</section>
+<!--Process One End-->
+
+<!--Testimonial One Start-->
+<section class="testimonial-one">
+    <div class="testimonial-one__bg-box">
+        <div class="testimonial-one__bg"
+            style="background-image: url(/assets/images/backgrounds/testimonial-one-bg.jpg);"></div>
+    </div>
+    <div class="container">
+        <div class="testimonial-one__top">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="testimonial-one__left">
+                        <div class="section-title text-left">
+                            <span class="section-title__tagline">{{ 'home.testimonials.tagline' | t(locale) }}</span>
+                            <h2 class="section-title__title">{{ 'home.testimonials.title' | t(locale) }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="testimonial-one__right">
+                        <p class="testimonial-one__text">{{ 'home.testimonials.text' | t(locale) }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-one__bottom">
+            <div class="testimonial-one__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
+                "items": 1,
+                "margin": 30,
+                "smartSpeed": 700,
+                "loop":true,
+                "autoplay": 6000,
+                "nav":false,
+                "dots":false,
+                "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"],
+                "responsive":{
+                    "0":{
+                        "items":1
+                    },
+                    "768":{
+                        "items":2
+                    },
+                    "992":{
+                        "items": 2
+                    },
+                    "1200":{
+                        "items": 3
+                    }
+                }
+            }'>
+                <!--Testimonial One Single Start-->
+                <div class="item">
+                    <div class="testimonial-one__single">
+                        <div class="testimonial-one__icon-quote">
+                            <img src="/assets/images/icon/icon-quote.png" alt="">
+                        </div>
+                        <div class="testimonial-one__single-inner">
+                            <div class="testimonial-one__rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <p class="testimonial-one__text-2">{{ 'home.testimonials.review1' | t(locale) }}</p>
+                            <div class="testimonial-one__client-info">
+                                <div class="testimonial-one__client-img">
+                                    <img src="/assets/images/testimonial/avatar_72x72.png" alt="">
+                                </div>
+                                <div class="testimonial-one__content">
+                                    <h3 class="testimonial-one__client-name">Marzena Z...</h3>
+                                    <p class="testimonial-one__client-sub-title">{{ 'home.testimonials.clientFemale' | t(locale) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Testimonial One Single End-->
+                <!--Testimonial One Single Start-->
+                <div class="item">
+                    <div class="testimonial-one__single">
+                        <div class="testimonial-one__icon-quote">
+                            <img src="/assets/images/icon/icon-quote.png" alt="">
+                        </div>
+                        <div class="testimonial-one__single-inner">
+                            <div class="testimonial-one__rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <p class="testimonial-one__text-2">{{ 'home.testimonials.review2' | t(locale) }}</p>
+                            <div class="testimonial-one__client-info">
+                                <div class="testimonial-one__client-img">
+                                    <img src="/assets/images/testimonial/avatar_72x72.png" alt="">
+                                </div>
+                                <div class="testimonial-one__content">
+                                    <h3 class="testimonial-one__client-name">Natalia M...</h3>
+                                    <p class="testimonial-one__client-sub-title">{{ 'home.testimonials.clientFemale' | t(locale) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Testimonial One Single End-->
+                <!--Testimonial One Single Start-->
+                <div class="item">
+                    <div class="testimonial-one__single">
+                        <div class="testimonial-one__icon-quote">
+                            <img src="/assets/images/icon/icon-quote.png" alt="">
+                        </div>
+                        <div class="testimonial-one__single-inner">
+                            <div class="testimonial-one__rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <p class="testimonial-one__text-2">{{ 'home.testimonials.review3' | t(locale) }}</p>
+                            <div class="testimonial-one__client-info">
+                                <div class="testimonial-one__client-img">
+                                    <img src="/assets/images/testimonial/avatar_72x72.png" alt="">
+                                </div>
+                                <div class="testimonial-one__content">
+                                    <h3 class="testimonial-one__client-name">Stanisław T...</h3>
+                                    <p class="testimonial-one__client-sub-title">{{ 'home.testimonials.client' | t(locale) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Testimonial One Single End-->
+                <!--Testimonial One Single Start-->
+                <div class="item">
+                    <div class="testimonial-one__single">
+                        <div class="testimonial-one__icon-quote">
+                            <img src="/assets/images/icon/icon-quote.png" alt="">
+                        </div>
+                        <div class="testimonial-one__single-inner">
+                            <div class="testimonial-one__rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <p class="testimonial-one__text-2">{{ 'home.testimonials.review4' | t(locale) }}</p>
+                            <div class="testimonial-one__client-info">
+                                <div class="testimonial-one__client-img">
+                                    <img src="/assets/images/testimonial/avatar_72x72.png" alt="">
+                                </div>
+                                <div class="testimonial-one__content">
+                                    <h3 class="testimonial-one__client-name">Kristina V...</h3>
+                                    <p class="testimonial-one__client-sub-title">{{ 'home.testimonials.clientFemale' | t(locale) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Testimonial One Single End-->
+                    <!--Testimonial One Single Start-->
+                <div class="item">
+                    <div class="testimonial-one__single">
+                        <div class="testimonial-one__icon-quote">
+                            <img src="/assets/images/icon/icon-quote.png" alt="">
+                        </div>
+                        <div class="testimonial-one__single-inner">
+                            <div class="testimonial-one__rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <p class="testimonial-one__text-2">{{ 'home.testimonials.review5' | t(locale) }}</p>
+                            <div class="testimonial-one__client-info">
+                                <div class="testimonial-one__client-img">
+                                    <img src="/assets/images/testimonial/avatar_72x72.png" alt="">
+                                </div>
+                                <div class="testimonial-one__content">
+                                    <h3 class="testimonial-one__client-name">Janek K...</h3>
+                                    <p class="testimonial-one__client-sub-title">{{ 'home.testimonials.client' | t(locale) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Testimonial One Single End-->
+                    <!--Testimonial One Single Start-->
+                <div class="item">
+                    <div class="testimonial-one__single">
+                        <div class="testimonial-one__icon-quote">
+                            <img src="/assets/images/icon/icon-quote.png" alt="">
+                        </div>
+                        <div class="testimonial-one__single-inner">
+                            <div class="testimonial-one__rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <p class="testimonial-one__text-2">{{ 'home.testimonials.review6' | t(locale) }}</p>
+                            <div class="testimonial-one__client-info">
+                                <div class="testimonial-one__client-img">
+                                    <img src="/assets/images/testimonial/avatar_72x72.png" alt="">
+                                </div>
+                                <div class="testimonial-one__content">
+                                    <h3 class="testimonial-one__client-name">Natalia M...</h3>
+                                    <p class="testimonial-one__client-sub-title">{{ 'home.testimonials.clientFemale' | t(locale) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Testimonial One Single End-->
+                    <!--Testimonial One Single Start-->
+                <div class="item">
+                    <div class="testimonial-one__single">
+                        <div class="testimonial-one__icon-quote">
+                            <img src="/assets/images/icon/icon-quote.png" alt="">
+                        </div>
+                        <div class="testimonial-one__single-inner">
+                            <div class="testimonial-one__rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <p class="testimonial-one__text-2">{{ 'home.testimonials.review7' | t(locale) }}</p>
+                            <div class="testimonial-one__client-info">
+                                <div class="testimonial-one__client-img">
+                                    <img src="/assets/images/testimonial/avatar_72x72.png" alt="">
+                                </div>
+                                <div class="testimonial-one__content">
+                                    <h3 class="testimonial-one__client-name">Karolina B...</h3>
+                                    <p class="testimonial-one__client-sub-title">{{ 'home.testimonials.clientFemale' | t(locale) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Testimonial One Single End-->
+            </div>
+        </div>
+    </div>
+</section>
+<!--Testimonial One End-->
+
+<!--Instagram Start-->
+<section class="instagram">
+    <div class="container">
+        <div class="instagram__title">
+            <h3>{{ 'home.instagram.title' | t(locale) }}</h3>
+        </div>
+        <div class="row">
+            {% for post in instagram.posts %}
+            <!--Instagram Single Start-->
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6">
+                <div class="instagram__single">
+                    <div class="instagram__img">
+                        <img src="{{ post.media_url }}" alt="{{ post.caption | truncate(50) }}" loading="lazy">
+                        <div class="instagram__img-icon">
+                            <a href="{{ post.permalink }}" target="_blank" rel="noopener noreferrer" aria-label="Zobacz post na Instagramie">
+                                <span class="fab fa-instagram"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Instagram Single End-->
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!--Instagram End-->
+
+<!--Spa Center Start-->
+<section class="spa-center">
+    <div class="spa-center__bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+        style="background-image: url(/assets/images/backgrounds/spa-center-bg2.jpg);">
+    </div>
+    <div class="spa-center__inner">
+        <div class="container">
+            <div class="spa-center__content text-center">
+                <div class="spa-center__img">
+                    <img src="/assets/images/logo/logo_single.svg" alt="">
+                </div>
+                <h3 class="spa-center__title">{{ 'home.cta.title' | t(locale) | safe }}</h3>
+                <div class="spa-center__btn-box">
+                    <a href="contact.html" class="thm-btn spa-center__btn">{{ 'home.cta.button' | t(locale) }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Spa Center End-->
+
+<!--Google Map Start-->
+<section class="google-map">
+    <div class="container">
+        <div class="google-map__inner">
+            <iframe src="{{ site.googleMapUrl }}" 
+            class="google-map__one" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- <div class="google-map__opening-hours">
+                <h4 class="google-map__opening-hours-title">Godziny <br> Otwarcia</h4>
+                <div class="google-map__opening-hours-icon">
+                    <span class="icon-time"></span>
+                </div>
+                <ul class="list-unstyled google-map__opening-hours-list">
+                    <li>
+                        <p>Monday</p>
+                        <h5>12:00 pm - 19:00 pm</h5>
+                    </li>
+                    <li>
+                        <p>Tuesday to Friday</p>
+                        <h5>8:00 am - 19:00 pm</h5>
+                    </li>
+                    <li>
+                        <p>Saturday</p>
+                        <h5>8:00 am to 3:30 pm</h5>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+</section>
+<!--Google Map End-->
