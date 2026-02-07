@@ -5,7 +5,10 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {% for item in collections.all %}
-  {% if item.url != '/assets/vendors/the-sayinistic-font/the_sayinistic_demo-demo/' and item.url != '/assets/vendors/reey-font/reey-regular-demo/' %}
+  {% if not item.data.eleventyExcludeFromCollections
+        and item.url != '/assets/vendors/the-sayinistic-font/the_sayinistic_demo-demo/'
+        and item.url != '/assets/vendors/reey-font/reey-regular-demo/'
+        and '404' not in item.url %}
   <url>
     <loc>{{ site.siteUrl }}{{ item.url }}</loc>
     <lastmod>{{ item.date | date("yyyy-MM-dd") }}</lastmod>

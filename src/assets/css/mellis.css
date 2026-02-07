@@ -7164,6 +7164,7 @@ ul {
   position: relative;
   display: block;
   margin-top: 55px;
+  padding-bottom: 80px;
 }
 
 .services-details-two__faq .faq-one-accrodion .accrodion {
@@ -7245,6 +7246,23 @@ ul {
 .services-details-two__faq .faq-one-accrodion .accrodion-content p {
   margin: 0;
   line-height: 30px;
+}
+
+.faq-section-title {
+  margin-top: 60px;
+}
+
+.faq-section-title:first-of-type {
+  margin-top: 20px;
+}
+
+.faq-cta {
+  padding: 70px 0;
+  background-color: var(--mellis-extra);
+}
+
+.faq-cta__inner .section-title {
+  margin-bottom: 22px;
 }
 
 /*--------------------------------------------------------------
@@ -8235,14 +8253,22 @@ ul {
 .before-and-after__img-box {
   position: relative;
   display: block;
+  max-height: 800px;
+  overflow: hidden;
 }
 
 .before-and-after__img-box .before-after {
   position: relative;
 }
 
+.before-and-after__img-box .before-after .twentytwenty-container {
+  height: min(800px, 70vh);
+}
+
 .before-and-after__img-box .before-after .twentytwenty-container img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .before-and-after__img-box .before-after .twentytwenty-horizontal .twentytwenty-before-label:before {

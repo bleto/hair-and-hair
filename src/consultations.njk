@@ -29,6 +29,39 @@ eleventyComputed:
 </section>
 <!--Page Header End-->
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{ 'consultations.faq.q1' | t(locale) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ 'consultations.faq.a1' | t(locale) }}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'consultations.faq.q2' | t(locale) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ 'consultations.faq.a2' | t(locale) }}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'consultations.faq.q3' | t(locale) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ 'consultations.faq.a3' | t(locale) }}"
+      }
+    }
+  ]
+}
+</script>
+
 
 <!--Client Issues Start-->
 <section class="client-issues">
@@ -38,7 +71,7 @@ eleventyComputed:
                 <div class="client-issues__left">
                     <div class="client-issues__img-box">
                         <div class="client-issues__img">
-                            <img src="/assets/images/resources/consultation.jpg" alt="">
+                            <img src="/assets/images/resources/consultation.jpg" alt="{{ 'consultations.imageAlt' | t(locale) }}">
                         </div>
                     </div>
                 </div>
@@ -92,3 +125,16 @@ eleventyComputed:
     </div>
 </section>
 <!--Client Issues End-->
+
+<section class="faq-cta">
+    <div class="container">
+        <div class="faq-cta__inner text-center">
+            <div class="section-title text-center">
+                <span class="section-title__tagline">{{ 'consultations.faqCta.subtitle' | t(locale) }}</span>
+                <h2 class="section-title__title">{{ 'consultations.faqCta.title' | t(locale) }}</h2>
+                <p class="section-title__text">{{ 'consultations.faqCta.text' | t(locale) }}</p>
+            </div>
+            <a href="{% if locale == 'en' %}/en/faq/#faq-consultations{% else %}/faq/#faq-consultations{% endif %}" class="thm-btn">{{ 'consultations.faqCta.link' | t(locale) }}</a>
+        </div>
+    </div>
+</section>

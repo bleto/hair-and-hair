@@ -1,0 +1,181 @@
+---
+pagination:
+  data: translations.locales
+  size: 1
+  alias: locale
+permalink: "{% if locale == 'en' %}/en/faq/{% else %}/faq/{% endif %}"
+layout: layout.njk
+eleventyComputed:
+  title: "{{ 'faqPage.title' | t(locale) }}"
+  description: "{{ 'faqPage.description' | t(locale) }}"
+---
+
+<!--Page Header Start-->
+<section class="page-header">
+  <div class="page-header__bg" style="background-image: url(/assets/images/backgrounds/hah_1.jpg);">
+  </div>
+  <div class="container">
+    <div class="page-header__inner">
+      <ul class="thm-breadcrumb list-unstyled">
+        <li>
+          <a href="{% if locale == 'en' %}/en/{% else %}/{% endif %}">{{ 'faqPage.breadcrumb.home' | t(locale) }}</a>
+        </li>
+        <li><span>/</span></li>
+        <li>{{ 'faqPage.breadcrumb.current' | t(locale) }}</li>
+      </ul>
+      <h1 style="color: #fff">{{ 'faqPage.title' | t(locale) }}</h1>
+    </div>
+  </div>
+</section>
+<!--Page Header End-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{ 'treatments.faq.q1' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'treatments.faq.a1' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'treatments.faq.q2' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'treatments.faq.a2' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'treatments.faq.q3' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'treatments.faq.a3' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'consultations.faq.q1' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'consultations.faq.a1' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'consultations.faq.q2' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'consultations.faq.a2' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'consultations.faq.q3' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'consultations.faq.a3' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'consultationsOnline.faq.q1' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'consultationsOnline.faq.a1' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'consultationsOnline.faq.q2' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'consultationsOnline.faq.a2' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'consultationsOnline.faq.q3' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'consultationsOnline.faq.a3' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'headSpa.faq.q1' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'headSpa.faq.a1' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'headSpa.faq.q2' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'headSpa.faq.a2' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'headSpa.faq.q3' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'headSpa.faq.a3' | t(locale) }}" }
+    }
+  ]
+}
+</script>
+
+<section class="services-details-two__faq">
+  <div class="container">
+    <div class="section-title text-center">
+      <span class="section-title__tagline">{{ 'faqPage.subtitle' | t(locale) }}</span>
+      <h2 class="section-title__title">{{ 'faqPage.heading' | t(locale) }}</h2>
+      <p class="section-title__text">{{ 'faqPage.description' | t(locale) }}</p>
+    </div>
+
+    <div class="section-title text-left faq-section-title" id="faq-treatments">
+      <h3 class="section-title__title">{{ 'faqPage.sections.treatments' | t(locale) }}</h3>
+    </div>
+    <div class="faq-one-accrodion accrodion-grp" data-grp-name="faq-accrodion-treatments">
+      <div class="accrodion active">
+        <div class="accrodion-title"><h4>{{ 'treatments.faq.q1' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'treatments.faq.a1' | t(locale) }}</p></div></div>
+      </div>
+      <div class="accrodion">
+        <div class="accrodion-title"><h4>{{ 'treatments.faq.q2' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'treatments.faq.a2' | t(locale) }}</p></div></div>
+      </div>
+      <div class="accrodion last-child">
+        <div class="accrodion-title"><h4>{{ 'treatments.faq.q3' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'treatments.faq.a3' | t(locale) }}</p></div></div>
+      </div>
+    </div>
+
+    <div class="section-title text-left faq-section-title" id="faq-consultations">
+      <h3 class="section-title__title">{{ 'faqPage.sections.consultations' | t(locale) }}</h3>
+    </div>
+    <div class="faq-one-accrodion accrodion-grp" data-grp-name="faq-accrodion-consultations">
+      <div class="accrodion active">
+        <div class="accrodion-title"><h4>{{ 'consultations.faq.q1' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'consultations.faq.a1' | t(locale) }}</p></div></div>
+      </div>
+      <div class="accrodion">
+        <div class="accrodion-title"><h4>{{ 'consultations.faq.q2' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'consultations.faq.a2' | t(locale) }}</p></div></div>
+      </div>
+      <div class="accrodion last-child">
+        <div class="accrodion-title"><h4>{{ 'consultations.faq.q3' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'consultations.faq.a3' | t(locale) }}</p></div></div>
+      </div>
+    </div>
+
+    <div class="section-title text-left faq-section-title" id="faq-consultations-online">
+      <h3 class="section-title__title">{{ 'faqPage.sections.consultationsOnline' | t(locale) }}</h3>
+    </div>
+    <div class="faq-one-accrodion accrodion-grp" data-grp-name="faq-accrodion-consultations-online">
+      <div class="accrodion active">
+        <div class="accrodion-title"><h4>{{ 'consultationsOnline.faq.q1' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'consultationsOnline.faq.a1' | t(locale) }}</p></div></div>
+      </div>
+      <div class="accrodion">
+        <div class="accrodion-title"><h4>{{ 'consultationsOnline.faq.q2' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'consultationsOnline.faq.a2' | t(locale) }}</p></div></div>
+      </div>
+      <div class="accrodion last-child">
+        <div class="accrodion-title"><h4>{{ 'consultationsOnline.faq.q3' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'consultationsOnline.faq.a3' | t(locale) }}</p></div></div>
+      </div>
+    </div>
+
+    <div class="section-title text-left faq-section-title" id="faq-head-spa">
+      <h3 class="section-title__title">{{ 'faqPage.sections.headSpa' | t(locale) }}</h3>
+    </div>
+    <div class="faq-one-accrodion accrodion-grp" data-grp-name="faq-accrodion-headspa">
+      <div class="accrodion active">
+        <div class="accrodion-title"><h4>{{ 'headSpa.faq.q1' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'headSpa.faq.a1' | t(locale) }}</p></div></div>
+      </div>
+      <div class="accrodion">
+        <div class="accrodion-title"><h4>{{ 'headSpa.faq.q2' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'headSpa.faq.a2' | t(locale) }}</p></div></div>
+      </div>
+      <div class="accrodion last-child">
+        <div class="accrodion-title"><h4>{{ 'headSpa.faq.q3' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'headSpa.faq.a3' | t(locale) }}</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -29,6 +29,39 @@ eleventyComputed:
 </section>
 <!--Page Header End-->
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{ 'headSpa.faq.q1' | t(locale) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ 'headSpa.faq.a1' | t(locale) }}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'headSpa.faq.q2' | t(locale) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ 'headSpa.faq.a2' | t(locale) }}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'headSpa.faq.q3' | t(locale) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ 'headSpa.faq.a3' | t(locale) }}"
+      }
+    }
+  ]
+}
+</script>
+
 <!--Client Issues Start-->
 <section class="client-issues">
     <div class="container">
@@ -37,7 +70,7 @@ eleventyComputed:
                 <div class="client-issues__left">
                     <div class="client-issues__img-box">
                         <div class="client-issues__img">
-                            <img src="/assets/images/resources/head_spa2.jpg" alt="">
+                            <img src="/assets/images/resources/head_spa2.jpg" alt="{{ 'headSpa.imageAlt' | t(locale) }}">
                         </div>
                     </div>
                 </div>
@@ -89,3 +122,16 @@ eleventyComputed:
     </div>
 </section>
 <!--Client Issues End-->
+
+<section class="faq-cta">
+    <div class="container">
+        <div class="faq-cta__inner text-center">
+            <div class="section-title text-center">
+                <span class="section-title__tagline">{{ 'headSpa.faqCta.subtitle' | t(locale) }}</span>
+                <h2 class="section-title__title">{{ 'headSpa.faqCta.title' | t(locale) }}</h2>
+                <p class="section-title__text">{{ 'headSpa.faqCta.text' | t(locale) }}</p>
+            </div>
+            <a href="{% if locale == 'en' %}/en/faq/#faq-head-spa{% else %}/faq/#faq-head-spa{% endif %}" class="thm-btn">{{ 'headSpa.faqCta.link' | t(locale) }}</a>
+        </div>
+    </div>
+</section>

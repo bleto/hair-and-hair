@@ -29,6 +29,39 @@ eleventyComputed:
 </section>
 <!--Page Header End-->
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{ 'treatments.faq.q1' | t(locale) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ 'treatments.faq.a1' | t(locale) }}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'treatments.faq.q2' | t(locale) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ 'treatments.faq.a2' | t(locale) }}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'treatments.faq.q3' | t(locale) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ 'treatments.faq.a3' | t(locale) }}"
+      }
+    }
+  ]
+}
+</script>
+
 
 <!--Client Issues Start-->
 <section class="client-issues">
@@ -38,7 +71,7 @@ eleventyComputed:
                 <div class="client-issues__left">
                     <div class="client-issues__img-box">
                         <div class="client-issues__img">
-                            <img src="/assets/images/resources/treatments.jpg" alt="">
+                            <img src="/assets/images/resources/treatments.jpg" alt="{{ 'treatments.imageAlt' | t(locale) }}">
                         </div>
                     </div>
                 </div>
@@ -246,7 +279,7 @@ eleventyComputed:
 <!--Client Issues End-->
 
 <!--Before And After Start-->
-<section class="before-and-after">
+{# <section class="before-and-after">
     <div class="container">
         <div class="section-title text-center">
             <span class="section-title__tagline">{{ 'treatments.beforeAfter.subtitle' | t(locale) }}</span>
@@ -255,11 +288,25 @@ eleventyComputed:
         <div class="before-and-after__img-box">
             <div class="before-after">
                 <div class="before-after-twentytwenty" id="wrinkle-before-after">
-                    <img src="/assets/images/resources/after1.jpg" alt="">
-                    <img src="/assets/images/resources/before1.jpg" alt="">
+                    <img src="/assets/images/resources/after.jpg" alt="{{ 'treatments.beforeAfter.afterAlt' | t(locale) }}">
+                    <img src="/assets/images/resources/before.jpg" alt="{{ 'treatments.beforeAfter.beforeAlt' | t(locale) }}">
                 </div>
             </div>
         </div>
     </div>
-</section>
+</section> #}
 <!--Before And After End-->
+
+
+<section class="faq-cta">
+    <div class="container">
+        <div class="faq-cta__inner text-center">
+            <div class="section-title text-center">
+                <span class="section-title__tagline">{{ 'treatments.faqCta.subtitle' | t(locale) }}</span>
+                <h2 class="section-title__title">{{ 'treatments.faqCta.title' | t(locale) }}</h2>
+                <p class="section-title__text">{{ 'treatments.faqCta.text' | t(locale) }}</p>
+            </div>
+            <a href="{% if locale == 'en' %}/en/faq/#faq-treatments{% else %}/faq/#faq-treatments{% endif %}" class="thm-btn">{{ 'treatments.faqCta.link' | t(locale) }}</a>
+        </div>
+    </div>
+</section>

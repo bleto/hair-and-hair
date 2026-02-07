@@ -36,6 +36,7 @@ export default {
     contact: 'Contact',
     links: 'Links',
     pricing: 'Pricing',
+    faq: 'FAQ',
     privacy: 'Privacy Policy',
     copyright: '© Copyright',
   },
@@ -51,10 +52,11 @@ export default {
 
   // Contact Page
   contact: {
-    title: 'Contact - Book Trichology Appointment',
+    title: 'Contact – Hair & Hair Trichology Clinic',
     subtitle: 'Schedule Your Consultation',
     description:
-      'Hair & Hair Trichology Clinic - Krakow, ul. Ruczaj 17A. Book appointment: +48 571 092 150. Consultations, treatments, Head SPA. Parking available.',
+      'Contact the Hair & Hair trichology clinic in Krakow. Address, phone, email and contact form. Book a consultation, treatment or Head SPA.',
+    imageAlt: 'Hair & Hair clinic in Krakow',
     breadcrumb: {
       home: 'Home',
       current: 'Contact',
@@ -88,13 +90,31 @@ export default {
 
   // Booking Page
   booking: {
-    title: 'Booking - Schedule a Trichology Appointment',
+    title: 'Booking – Hair & Hair Trichology Clinic',
     subtitle: 'Schedule Your Trichology Consultation',
     description:
-      'Hair & Hair Trichology Clinic - Krakow, ul. Ruczaj 17A. Book appointment: +48 571 092 150. Consultations, treatments, Head SPA. Parking available.',
+      'Book a trichology appointment in Krakow. Choose a consultation, treatment or Head SPA and reserve your time online.',
     breadcrumb: {
       home: 'Home',
       current: 'Booking',
+    },
+  },
+
+  // FAQ Page
+  faqPage: {
+    title: 'FAQ | Hair & Hair',
+    subtitle: 'Frequently asked questions',
+    heading: 'FAQ – your questions answered',
+    description: 'Here are answers to the most common questions about consultations and trichological treatments.',
+    breadcrumb: {
+      home: 'Home',
+      current: 'FAQ',
+    },
+    sections: {
+      treatments: 'Trichological treatments',
+      consultations: 'Trichological consultations',
+      consultationsOnline: 'Online consultations',
+      headSpa: 'Head SPA',
     },
   },
 
@@ -103,11 +123,12 @@ export default {
     title: 'Trichological Treatments | Hair & Hair',
     subtitle: 'Schedule Your Trichology Consultation',
     description:
-      'Hair & Hair Trichology Clinic - Krakow, ul. Ruczaj 17A. Book appointment: +48 571 092 150. Consultations, treatments, Head SPA. Parking available.',
+      'Trichological treatments in Krakow: cleansing, therapy and prevention for the scalp. See indications, effects and book your treatment.',
     breadcrumb: {
       home: 'Home',
       current: 'Treatments',
     },
+    imageAlt: 'Trichological treatment at Hair & Hair clinic',
     data: {
       title: 'Trichological treatment – healthy scalp and strong hair',
       subtitle: 'Trichological',
@@ -155,6 +176,22 @@ export default {
     beforeAfter: {
       title: 'Before and After',
       subtitle: 'See the results of my treatments',
+      beforeAlt: 'Scalp before treatment',
+      afterAlt: 'Scalp after treatment',
+    },
+    faq: {
+      q1: 'Is a trichological treatment painful?',
+      a1: 'No, treatments are non-invasive and painless.',
+      q2: 'Do I need a consultation before a treatment?',
+      a2: 'Not always. Treatments can be performed without a prior consultation, but for complex issues a consultation is recommended.',
+      q3: 'How many treatments are needed?',
+      a3: 'The number of treatments depends on the problem and is selected individually.',
+    },
+    faqCta: {
+      subtitle: 'Have questions?',
+      title: 'See the treatment FAQ',
+      text: 'Find answers to the most common questions about trichological treatments.',
+      link: 'Go to FAQ',
     },
   },
 
@@ -163,11 +200,12 @@ export default {
     title: 'Trichological Consultations | Hair & Hair',
     subtitle: 'Schedule Your Trichology Consultation',
     description:
-      'Hair & Hair Trichology Clinic - Krakow, ul. Ruczaj 17A. Book appointment: +48 571 092 150. Consultations, treatments, Head SPA. Parking available.',
+      'Trichological consultation with trichoscopy in Krakow. Detailed scalp and hair diagnosis and an individual therapy plan.',
     breadcrumb: {
       home: 'Home',
       current: 'Consultations',
     },
+    imageAlt: 'Trichology consultation at Hair & Hair clinic',
     data: {
       title: 'First step to a healthy scalp and hair',
       subtitle: 'Trichological Consultation',
@@ -179,7 +217,21 @@ export default {
         point4: 'to help find the cause of the problem, not just its symptoms',
       },
       descriptionCd: "Each client receives an <b>individual Trichoplan</b> after the visit – clear, tailored recommendations for the beginning, including home care and next steps in working towards a healthy scalp and hair. <br><br> See you at the consultation!",
-    }
+    },
+    faq: {
+      q1: 'How long does a trichology consultation take?',
+      a1: 'The consultation takes about 60 minutes.',
+      q2: 'What is trichoscopy?',
+      a2: 'It is a specialized examination of the scalp and hair under magnification that supports diagnosis.',
+      q3: 'What do I receive after the consultation?',
+      a3: 'You receive individual recommendations and a therapy plan (Trichoplan).',
+    },
+    faqCta: {
+      subtitle: 'Have questions?',
+      title: 'See the consultation FAQ',
+      text: 'Check answers to the most common questions about trichology consultations.',
+      link: 'Go to FAQ',
+    },
   },
 
   // Consultations Page
@@ -187,11 +239,12 @@ export default {
     title: 'Online Trichological Consultations | Hair & Hair',
     subtitle: 'Schedule Your Online Trichology Consultation',
     description:
-      'Hair & Hair Trichology Clinic - Krakow, ul. Ruczaj 17A. Book appointment: +48 571 092 150. Consultations, treatments, Head SPA. Parking available.',
+      'Online trichology consultation: interview, symptom analysis and home-care plan without travel. Support for clients in Poland and abroad.',
     breadcrumb: {
       home: 'Home',
       current: 'Online Consultations',
     },
+    imageAlt: 'Online trichology consultation',
     data: {
       title: 'Professional help – regardless of location',
       subtitle: 'ONLINE TRICHOLOGICAL CONSULTATION',
@@ -204,7 +257,21 @@ export default {
         point5: 'establishment of a therapy plan and next steps',
       },
       descriptionCd: "Although the online consultation does not replace the trichoscopic examination, in many cases it constitutes an effective and <b>fully sufficient first stage of trichological work</b> — especially for chronic, care-related problems or as a continuation of therapy.<br><br> Each client receives an individual recommendation plan after the consultation, tailored to the needs of the scalp, lifestyle, and care possibilities.<br><br> Online consultations combine a modern form of contact with reliable trichological knowledge — available without geographical barriers, in a comfortable and safe format.",
-    }
+    },
+    faq: {
+      q1: 'Does an online consultation replace an in-clinic visit?',
+      a1: 'Not always, but it is often a sufficient first step.',
+      q2: 'How should I prepare for an online consultation?',
+      a2: 'Send scalp photos and describe your symptoms and current care routine.',
+      q3: 'Will I receive a care plan?',
+      a3: 'Yes, you will receive individualized recommendations after the consultation.',
+    },
+    faqCta: {
+      subtitle: 'Have questions?',
+      title: 'See the online consultation FAQ',
+      text: 'Answers to the most common questions about online consultations.',
+      link: 'Go to FAQ',
+    },
   },
 
   // Head Spa Page
@@ -212,11 +279,12 @@ export default {
     title: 'Head SPA | Hair & Hair',
     subtitle: 'Schedule Your Trichology Consultation',
     description:
-      'Hair & Hair Trichology Clinic - Krakow, ul. Ruczaj 17A. Book appointment: +48 571 092 150. Consultations, treatments, Head SPA. Parking available.',
+      'Head SPA in Krakow: a relaxing ritual and scalp therapy based on trichology. For a healthy scalp and stronger hair.',
     breadcrumb: {
       home: 'Home',
       current: 'Head SPA',
     },
+    imageAlt: 'Head SPA treatment at Hair & Hair clinic',
     data: {
       title: 'HEAD SPA ',
       subtitle: 'Trichological',
@@ -227,13 +295,29 @@ export default {
         point3: 'improve microcirculation,',
         point4: 'reduce tension and stress.',
       },
-    }
+    },
+    faq: {
+      q1: 'How is Head SPA different from a classic massage?',
+      a1: 'It is a ritual that combines relaxation with scalp therapy and professional products.',
+      q2: 'Who is Head SPA for?',
+      a2: 'For anyone who wants to improve scalp and hair condition and deeply relax.',
+      q3: 'How often should I do Head SPA?',
+      a3: 'It depends on your needs, usually every few weeks.',
+    },
+    faqCta: {
+      subtitle: 'Have questions?',
+      title: 'See the Head SPA FAQ',
+      text: 'The most common questions about the Head SPA ritual.',
+      link: 'Go to FAQ',
+    },
   },
 
   // Pricing Page
   pricing: {
     title: 'Pricing for Trichology Services | Hair & Hair',
     subtitle: 'Schedule Your Trichology Consultation',
+    description:
+      'Price list for consultations, treatments and Head SPA at Hair & Hair. Check starter packages and current service rates.',
     breadcrumb: {
       home: 'Home',
       current: 'Pricing',
@@ -244,7 +328,7 @@ export default {
       a: 'Trichological consultation + trichoscopy',
       b: 'Follow-up consultation',
       c: 'Online trichological consultation',
-      c: 'Online follow-up consultation',
+      d: 'Online follow-up consultation',
     },
     pricingTreatments: {
       title: 'Trichology Therapy',
@@ -294,6 +378,7 @@ export default {
       subtitle: 'Gift Voucher',
       title: 'Give Your Loved Ones a Unique Gift',
       description: 'Looking for the perfect gift for a loved one? Give a voucher for a trichological consultation or treatment at the Hair & Hair clinic! It\'s a great way to care for the health of the scalp and hair and bring joy to someone special.',
+      imageAlt: 'Hair & Hair gift voucher',
       cta: 'Order Voucher',
       email: {
         subject: 'Inquiry about Hair & Hair Gift Voucher',
@@ -307,6 +392,7 @@ export default {
     title: 'Trichologist Krakow - Professional Hair Treatment | Hair & Hair',
     description:
       'Professional trichology clinic in Krakow. Effective treatment for hair loss, alopecia, dandruff. Head SPA, scalp therapy. Experienced trichologist - book appointment.',
+    h1: 'Trichologist in Krakow – Hair & Hair',
     slider: {
       slide1: {
         subtitle: 'Welcome to Hair & Hair',
@@ -349,14 +435,17 @@ export default {
       step1: {
         title: 'Thorough diagnosis of the problem',
         text: 'I conduct a detailed interview and trichoscopic examination to accurately assess the condition of the scalp and hair and select appropriate solutions.',
+        imageAlt: 'Trichology diagnosis',
       },
       step2: {
         title: 'I create an individual therapy plan',
         text: 'Personalized therapy tailored to your needs, lifestyle and real possibilities.',
+        imageAlt: 'Individual therapy plan',
       },
       step3: {
         title: 'I monitor effects and support you in the process',
         text: 'I monitor progress, adjust therapy and ensure lasting results.',
+        imageAlt: 'Therapy progress monitoring',
       },
     },
     testimonials: {

@@ -10,6 +10,8 @@ eleventyComputed:
   description: "{{ 'home.description' | t(locale) }}"
 ---
 
+<h1 class="sr-only">{{ 'home.h1' | t(locale) }}</h1>
+
 <!--Main Slider Start-->
 <section class="main-slider-two">
     <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
@@ -40,7 +42,7 @@ eleventyComputed:
                                 <p class="main-slider-two__sub-title">{{ 'home.slider.slide1.subtitle' | t(locale) }}</p>
                                 <h2 class="main-slider-two__title">{{ 'home.slider.slide1.title' | t(locale) | safe }}</h2>
                                 <div class="main-slider-two__btn-box">
-                                    <a href="{% if locale == 'en' %}/en/consultations/{% else %}/consultations{% endif %}" class="thm-btn main-slider-two__btn">{{ 'home.slider.slide1.button' | t(locale) }}</a>
+                                    <a href="{% if locale == 'en' %}/en/consultations/{% else %}/consultations/{% endif %}" class="thm-btn main-slider-two__btn">{{ 'home.slider.slide1.button' | t(locale) }}</a>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +62,7 @@ eleventyComputed:
                                 <p class="main-slider-two__sub-title">{{ 'home.slider.slide2.subtitle' | t(locale) }}</p>
                                 <h2 class="main-slider-two__title">{{ 'home.slider.slide2.title' | t(locale) | safe }}</h2>
                                 <div class="main-slider-two__btn-box">
-                                    <a href="{% if locale == 'en' %}/en/treatments/{% else %}/treatments{% endif %}" class="thm-btn main-slider-two__btn">{{ 'home.slider.slide2.button' | t(locale) }}</a>
+                                    <a href="{% if locale == 'en' %}/en/treatments/{% else %}/treatments/{% endif %}" class="thm-btn main-slider-two__btn">{{ 'home.slider.slide2.button' | t(locale) }}</a>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +82,7 @@ eleventyComputed:
                                 <p class="main-slider-two__sub-title">{{ 'home.slider.slide3.subtitle' | t(locale) }}</p>
                                 <h2 class="main-slider-two__title">{{ 'home.slider.slide3.title' | t(locale) | safe }}</h2>
                                 <div class="main-slider-two__btn-box">
-                                    <a href="{% if locale == 'en' %}/en/head-spa/{% else %}/head-spa{% endif %}" class="thm-btn main-slider-two__btn">{{ 'home.slider.slide3.button' | t(locale) }}</a>
+                                    <a href="{% if locale == 'en' %}/en/head-spa/{% else %}/head-spa/{% endif %}" class="thm-btn main-slider-two__btn">{{ 'home.slider.slide3.button' | t(locale) }}</a>
                                 </div>
                             </div>
                         </div>
@@ -160,7 +162,7 @@ eleventyComputed:
                                 </li>
                             </ul>
                             <div class="welcome-one__btn-box">
-                                <a href="{% if locale == 'en' %}/en/consultations/{% else %}/consultations{% endif %}" class="welcome-one__btn thm-btn">{{ 'home.intro.button' | t(locale) }}</a>
+                                <a href="{% if locale == 'en' %}/en/consultations/{% else %}/consultations/{% endif %}" class="welcome-one__btn thm-btn">{{ 'home.intro.button' | t(locale) }}</a>
                             </div>
                         </div>
                     </div>
@@ -259,11 +261,11 @@ eleventyComputed:
                     <div class="process-one__single">
                         <div class="process-one__img-box">
                             <div class="process-one__img">
-                                <img src="/assets/images/resources/step_1_188x188.jpg" alt="">
+                                <img src="/assets/images/resources/step_1_188x188.jpg" alt="{{ 'home.process.step1.imageAlt' | t(locale) }}">
                             </div>
                             <div class="process-one__count"></div>
                         </div>
-                        <h3 class="process-one__title"><a href="{% if locale == 'en' %}/en/consultations/{% else %}/consultations{% endif %}">{{ 'home.process.step1.title' | t(locale) }}</a></h3>
+                        <h3 class="process-one__title"><a href="{% if locale == 'en' %}/en/consultations/{% else %}/consultations/{% endif %}">{{ 'home.process.step1.title' | t(locale) }}</a></h3>
                         <p class="process-one__text">{{ 'home.process.step1.text' | t(locale) }}</p>
                     </div>
                 </div>
@@ -273,11 +275,11 @@ eleventyComputed:
                     <div class="process-one__single">
                         <div class="process-one__img-box">
                             <div class="process-one__img">
-                                <img src="/assets/images/resources/step_2_188x188.jpg" alt="">
+                                <img src="/assets/images/resources/step_2_188x188.jpg" alt="{{ 'home.process.step2.imageAlt' | t(locale) }}">
                             </div>
                             <div class="process-one__count"></div>
                         </div>
-                        <h3 class="process-one__title"><a href="{% if locale == 'en' %}/en/treatments/{% else %}/treatments{% endif %}">{{ 'home.process.step2.title' | t(locale) }}</a></h3>
+                        <h3 class="process-one__title"><a href="{% if locale == 'en' %}/en/treatments/{% else %}/treatments/{% endif %}">{{ 'home.process.step2.title' | t(locale) }}</a></h3>
                         <p class="process-one__text">{{ 'home.process.step2.text' | t(locale) }}</p>
                     </div>
                 </div>
@@ -287,11 +289,11 @@ eleventyComputed:
                     <div class="process-one__single">
                         <div class="process-one__img-box">
                             <div class="process-one__img">
-                                <img src="/assets/images/resources/step_3_188x188.jpg" alt="">
+                                <img src="/assets/images/resources/step_3_188x188.jpg" alt="{{ 'home.process.step3.imageAlt' | t(locale) }}">
                             </div>
                             <div class="process-one__count"></div>
                         </div>
-                        <h3 class="process-one__title"><a href="{% if locale == 'en' %}/en/treatments/{% else %}/treatments{% endif %}">{{ 'home.process.step3.title' | t(locale) }}</a></h3>
+                        <h3 class="process-one__title"><a href="{% if locale == 'en' %}/en/treatments/{% else %}/treatments/{% endif %}">{{ 'home.process.step3.title' | t(locale) }}</a></h3>
                         <p class="process-one__text">{{ 'home.process.step3.text' | t(locale) }}</p>
                     </div>
                 </div>
@@ -311,11 +313,11 @@ eleventyComputed:
         <div class="container">
             <div class="spa-center__content text-center">
                 <div class="spa-center__img">
-                    <img src="/assets/images/logo/logo_single.svg" alt="">
+                    <img src="/assets/images/logo/logo_single.svg" alt="{{ 'siteTitle' | t(locale) }}">
                 </div>
                 <h3 class="spa-center__title">{{ 'home.cta.title' | t(locale) | safe }}</h3>
                 <div class="spa-center__btn-box">
-                    <a href="{% if locale == 'en' %}/en/booking/{% else %}/booking{% endif %}" class="thm-btn spa-center__btn">{{ 'home.cta.button' | t(locale) }}</a>
+                    <a href="{% if locale == 'en' %}/en/booking/{% else %}/booking/{% endif %}" class="thm-btn spa-center__btn">{{ 'home.cta.button' | t(locale) }}</a>
                 </div>
             </div>
         </div>
