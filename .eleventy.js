@@ -1,10 +1,16 @@
 // Load environment variables from .env file
 import dotenv from 'dotenv';
+import { format } from 'date-fns';
 dotenv.config();
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
   eleventyConfig.addPassthroughCopy({ static: '/' });
+
+   // add `date` filter
+  eleventyConfig.addFilter('date', function (date, dateFormat) {
+    return format(date, dateFormat)
+  })
 
   // Filter do tłumaczeń
   eleventyConfig.addFilter('t', function (key, locale = 'pl') {
@@ -24,6 +30,17 @@ export default function (eleventyConfig) {
     }
 
     return value || key;
+  });
+
+  // URL encode filter for mailto params, etc.
+  eleventyConfig.addFilter('urlencode', function (value) {
+    return encodeURIComponent(value ?? '');
+  });
+
+  // Mailto-safe encoding with CRLF new lines for broader client support.
+  eleventyConfig.addFilter('mailto', function (value) {
+    const encoded = encodeURIComponent(value ?? '');
+    return encoded.replace(/%0A/g, '%0D%0A');
   });
 
   // Filter do pobierania obecnego języka

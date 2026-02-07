@@ -219,6 +219,16 @@ ul {
   margin-top: 5px;
 }
 
+.section-title__text {
+  margin: 12px auto 0;
+  max-width: 720px;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--mellis-gray);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
 .thm-btn {
   position: relative;
   display: inline-block;
@@ -2916,13 +2926,19 @@ ul {
 
 .counter-one__icon {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
 }
 
 .counter-one__icon span {
   position: relative;
   display: inline-block;
   font-size: 64px;
+  line-height: 1;
   color: var(--mellis-base);
   -webkit-transition: all 500ms linear;
   transition: all 500ms linear;
@@ -2943,6 +2959,9 @@ ul {
 .counter-one__count-box {
   position: relative;
   display: block;
+}
+.counter-one__count-box .odometer-formatting-mark {
+  font-size: 32px;
 }
 
 .counter-one__count-box span {
@@ -3344,6 +3363,7 @@ ul {
   display: block;
   overflow: hidden;
   z-index: 1;
+  aspect-ratio: 4 / 5;
 }
 
 .instagram__img:before {
@@ -3354,6 +3374,7 @@ ul {
   left: 0;
   right: 0;
   background-color: rgba(var(--mellis-black-rgb), .40);
+  pointer-events: none;
   -webkit-transition: opacity 500ms ease, visibility 500ms ease, -webkit-transform 500ms ease;
   transition: opacity 500ms ease, visibility 500ms ease, -webkit-transform 500ms ease;
   transition: opacity 500ms ease, visibility 500ms ease, transform 500ms ease;
@@ -3374,7 +3395,17 @@ ul {
 
 .instagram__img img {
   width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
   transition: all 500ms ease;
+}
+
+.instagram__link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .instagram__single:hover .instagram__img img {
@@ -3387,9 +3418,10 @@ ul {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: 2;
+  pointer-events: none;
 }
 
-.instagram__img-icon a {
+.instagram__img-icon span {
   position: relative;
   display: inline-block;
   font-size: 27px;
@@ -3398,7 +3430,7 @@ ul {
   transition: all 600ms ease;
 }
 
-.instagram__single:hover .instagram__img-icon a {
+.instagram__single:hover .instagram__img-icon span {
   transform: rotate(0deg) scale(1);
   transition-delay: 400ms;
 }
@@ -3986,7 +4018,7 @@ ul {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-bottom: 23px;
 }
 
@@ -7445,7 +7477,7 @@ ul {
 .pricing-plan {
   position: relative;
   display: block;
-  padding: 120px 0 90px;
+  padding: 120px 0 20px;
   z-index: 1;
 }
 
@@ -7505,11 +7537,39 @@ ul {
   padding: 40px 60px 60px;
 }
 
-.pricing-plan__per-day span {
+.pricing-plan__price {
   font-size: 34px;
   font-weight: 400;
   font-family: var(--mellis-font-two);
   color: var(--mellis-black);
+}
+
+.pricing-plan__price {
+  display: inline-block;
+}
+
+.pricing-plan__price--old {
+  margin-right: 10px;
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+.pricing-plan__time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--mellis-gray);
+}
+
+.pricing-plan__time .fa {
+  color: var(--mellis-base);
+  font-size: 14px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
 
 .pricing-plan__points {
@@ -7517,7 +7577,7 @@ ul {
   display: block;
   margin-top: 18px;
   margin-bottom: 35px;
-  min-height: 220px;
+  min-height: 280px;
 }
 
 .pricing-plan__points li {
@@ -7913,6 +7973,8 @@ ul {
 .client-issues__img {
   position: relative;
   display: block;
+  max-height: 730px;
+  overflow: hidden;
 }
 
 .client-issues__img::before {
@@ -7927,6 +7989,9 @@ ul {
 
 .client-issues__img img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .client-issues__right {
@@ -7940,6 +8005,13 @@ ul {
 
 .client-issues__text {
   font-weight: 400;
+}
+
+.client-issues__small-title {
+  margin: 28px 0 14px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--mellis-black);
 }
 
 .client-issues__points {
@@ -7979,6 +8051,63 @@ ul {
 .client-issues__points li .text p {
   font-weight: 700;
   color: var(--mellis-black);
+}
+
+.client-issues__contacts {
+  position: relative;
+  display: block;
+  margin-top: 24px;
+  padding: 18px 20px;
+  background-color: var(--mellis-extra);
+  border-radius: 6px;
+}
+
+.client-issues__contact-links {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.client-issues__contact-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--mellis-black);
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.client-issues__contact-link:hover {
+  color: var(--mellis-base);
+}
+
+.client-issues__contact-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  background-color: var(--mellis-white);
+  border-radius: 50%;
+  color: var(--mellis-base);
+  box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.06);
+}
+
+.client-issues__contact-text {
+  line-height: 1.2;
+}
+
+.client-issues__social {
+  margin-top: 16px;
+}
+
+.client-issues__right .contact-page__btn-box {
+  margin-top: 24px;
 }
 
 /*--------------------------------------------------------------
@@ -9210,6 +9339,111 @@ ul {
 
 .review-form-one__btn {
   border: none;
+}
+
+/*--------------------------------------------------------------
+# Cookie Banner
+--------------------------------------------------------------*/
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: rgba(var(--mellis-black-rgb), 0.98);
+  color: var(--mellis-white);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+.cookie-banner.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.cookie-banner__content {
+  flex: 1 1 320px;
+}
+
+.cookie-banner__title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.cookie-banner__text {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: rgba(var(--mellis-white-rgb), 0.85);
+}
+
+.cookie-banner__link {
+  color: var(--mellis-base);
+  font-weight: 600;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cookie-banner__btn {
+  padding: 10px 22px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.cookie-banner__btn--ghost {
+  background-color: transparent;
+  border: 1px solid rgba(var(--mellis-white-rgb), 0.4);
+}
+
+.cookie-banner__btn--ghost:hover {
+  background-color: rgba(var(--mellis-white-rgb), 0.08);
+}
+
+@media (max-width: 575px) {
+  .cookie-banner__actions {
+    width: 100%;
+  }
+
+  .cookie-banner__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/*--------------------------------------------------------------
+# Vouchers Image
+--------------------------------------------------------------*/
+.vouchers-image {
+  max-height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.vouchers-image img {
+  display: block;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
 }
 
 

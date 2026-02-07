@@ -17,9 +17,12 @@ export default {
     trichology: 'Trichology',
     consultations: 'Consultations',
     treatments: 'Treatments',
+    online: 'Online Consultations',
     headSpa: 'Head SPA',
     training: 'Training',
     contact: 'Contact',
+    booking: 'Booking',
+    pricing: 'Pricing',
   },
 
   // Header
@@ -37,6 +40,15 @@ export default {
     copyright: '© Copyright',
   },
 
+  // Cookie Banner
+  cookieBanner: {
+    title: 'We use cookies',
+    text: 'We use cookies to improve the website and measure traffic. You can accept analytics cookies or keep only essential ones.',
+    accept: 'Accept',
+    reject: 'Reject',
+    privacy: 'Privacy Policy',
+  },
+
   // Contact Page
   contact: {
     title: 'Contact - Book Trichology Appointment',
@@ -47,13 +59,175 @@ export default {
       home: 'Home',
       current: 'Contact',
     },
-    form: {
-      name: 'Full Name',
-      email: 'Email',
-      phone: 'Phone',
-      message: 'Message',
-      submit: 'Send Message',
+    reachout: {
+      tagline: 'Let’s Talk',
+      title: 'Choose the easiest way to reach us',
+     description:
+        'I am happy to answer questions about consultations, treatments, and available dates. Write an email, call, or reach out via social media.',
+      point1: 'Email or phone contact - whichever you prefer.',
+      point2: 'I am active on Facebook and Instagram.',
+      point3: 'I respond as quickly and clearly as possible.',
+      cta: 'Book Now',
     },
+    locations: {
+      tagline: 'Locations',
+      title: 'My Trichology Clinic',
+    },
+    form: {
+      tagline: 'Contact us',
+      title: 'Send a Message',
+      description: 'Interested in our spa services? We want your spa experience to be a memorable one.',
+      name: 'Full Name',
+      email: 'Email Address',
+      phone: 'Phone',
+      subject: 'Subject',
+      message: 'Write a Message',
+      submit: 'Send a message',
+    },
+  },
+
+  // Booking Page
+  booking: {
+    title: 'Booking - Schedule a Trichology Appointment',
+    subtitle: 'Schedule Your Trichology Consultation',
+    description:
+      'Hair & Hair Trichology Clinic - Krakow, ul. Ruczaj 17A. Book appointment: +48 571 092 150. Consultations, treatments, Head SPA. Parking available.',
+    breadcrumb: {
+      home: 'Home',
+      current: 'Booking',
+    },
+  },
+
+   // Treatments Page
+  treatments: {
+    title: 'Trichological Treatments | Hair & Hair',
+    subtitle: 'Schedule Your Trichology Consultation',
+    description:
+      'Hair & Hair Trichology Clinic - Krakow, ul. Ruczaj 17A. Book appointment: +48 571 092 150. Consultations, treatments, Head SPA. Parking available.',
+    breadcrumb: {
+      home: 'Home',
+      current: 'Treatments',
+    },
+    data: {
+      title: 'Trichological treatment – healthy scalp and strong hair',
+      subtitle: 'Trichological',
+      description: "Trichological treatments are <b>non-invasive and safe procedures</b> aimed at improving scalp condition and supporting proper hair growth. Each treatment is selected individually, according to the current needs of the scalp and hair, and may be <b>cleansing, therapeutic, or preventive.</b><br><br>Treatments can be performed <b>without a prior consultation</b> and are suitable both for people with scalp problems and for those who want to act preventively and consciously take care of hair health.",
+      sections: {
+        recommended: {
+          title: 'Trichological treatments are recommended for:',
+          list: {
+            point1: 'hair loss and alopecia',
+            point2: 'weakened or slowed hair growth',
+            point3: 'excessive scalp oiliness',
+            point4: 'dry and oily dandruff',
+            point5: 'itching, burning, and inflammation',
+            point6: 'disrupted scalp microbiome',
+            point7: 'dryness and a weakened hydrolipid barrier',
+            point8: 'scalp psoriasis (supportive therapy)',
+            point9: 'seborrheic dermatitis of the scalp',
+            point10: 'prevention and improvement of scalp condition and hair follicles',
+          },
+        },
+        effects: {
+          title: 'Effects of treatments:',
+          list: {
+            point1: 'thorough cleansing of the scalp',
+            point2: 'improved microcirculation and skin oxygenation',
+            point3: 'better nourishment of hair follicles',
+            point4: 'regulation of sebaceous gland activity',
+            point5: 'soothing irritation and inflammation',
+            point6: 'improved scalp comfort',
+            point7: 'creating optimal conditions for healthy hair growth',
+          },
+        },
+        keyInfo: {
+          title: 'Key information:',
+          list: {
+            point1: 'treatments are non-invasive and painless',
+            point2: 'suitable at any time of the year',
+            point3: 'no recovery time required',
+            point4: 'safe also for pregnant and breastfeeding women',
+            point5: 'individual contraindications are always excluded',
+          },
+        },
+      },
+    },
+    beforeAfter: {
+      title: 'Before and After',
+      subtitle: 'See the results of my treatments',
+    },
+  },
+
+  // Consultations Page
+  consultations: {
+    title: 'Trichological Consultations | Hair & Hair',
+    subtitle: 'Schedule Your Trichology Consultation',
+    description:
+      'Hair & Hair Trichology Clinic - Krakow, ul. Ruczaj 17A. Book appointment: +48 571 092 150. Consultations, treatments, Head SPA. Parking available.',
+    breadcrumb: {
+      home: 'Home',
+      current: 'Consultations',
+    },
+    data: {
+      title: 'First step to a healthy scalp and hair',
+      subtitle: 'Trichological Consultation',
+      description: "A trichological consultation is a 60-minute, calm meeting during which I attentively examine the scalp and hair. A key element of the visit is a <b>conversation and detailed interview</b> that allows me to understand your needs and possible causes of problems.<br><br> During the consultation, I perform a <b>trichoscopic examination</b> – a specialized assessment of the scalp and hair. Trichoscopy, combined with the interview, forms the basis of trichological diagnostics and allows planning further actions.<br><br>Trichoscopy allows:",
+      list: {
+        point1: 'to assess the condition and type of scalp',
+        point2: 'to check the condition of hair follicles and hair',
+        point3: 'to notice changes not visible to the naked eye',
+        point4: 'to help find the cause of the problem, not just its symptoms',
+      },
+      descriptionCd: "Each client receives an <b>individual Trichoplan</b> after the visit – clear, tailored recommendations for the beginning, including home care and next steps in working towards a healthy scalp and hair. <br><br> See you at the consultation!",
+    }
+  },
+
+  // Consultations Page
+  consultationsOnline: {
+    title: 'Online Trichological Consultations | Hair & Hair',
+    subtitle: 'Schedule Your Online Trichology Consultation',
+    description:
+      'Hair & Hair Trichology Clinic - Krakow, ul. Ruczaj 17A. Book appointment: +48 571 092 150. Consultations, treatments, Head SPA. Parking available.',
+    breadcrumb: {
+      home: 'Home',
+      current: 'Online Consultations',
+    },
+    data: {
+      title: 'Professional help – regardless of location',
+      subtitle: 'ONLINE TRICHOLOGICAL CONSULTATION',
+      description: "The online trichological consultation was created in response to real market needs and patients who do not always have the opportunity for a personal visit to the clinic.<br><br> Scalp and hair problems affect people regardless of their place of residence. Thanks to the online formula, we are <b>not limited to one location</b>, offering professional trichological support also to those who live far away, stay abroad, or appreciate the convenience of consultations from home. <br><br> During the online consultation, a detailed trichological interview is conducted, an analysis of reported symptoms and photographic documentation. This allows for a thorough examination of the problem and planning further actions.<br><br> The online consultation enables:",
+      list: {
+        point1: 'discussion of scalp and hair problems without the need to travel',
+        point2: 'analysis of symptoms',
+        point3: 'assessment of current care and used cosmetics',
+        point4: 'selection of individual home care and trichological preparations',
+        point5: 'establishment of a therapy plan and next steps',
+      },
+      descriptionCd: "Although the online consultation does not replace the trichoscopic examination, in many cases it constitutes an effective and <b>fully sufficient first stage of trichological work</b> — especially for chronic, care-related problems or as a continuation of therapy.<br><br> Each client receives an individual recommendation plan after the consultation, tailored to the needs of the scalp, lifestyle, and care possibilities.<br><br> Online consultations combine a modern form of contact with reliable trichological knowledge — available without geographical barriers, in a comfortable and safe format.",
+    }
+  },
+
+  // Head Spa Page
+  headSpa: {
+    title: 'Head SPA | Hair & Hair',
+    subtitle: 'Schedule Your Trichology Consultation',
+    description:
+      'Hair & Hair Trichology Clinic - Krakow, ul. Ruczaj 17A. Book appointment: +48 571 092 150. Consultations, treatments, Head SPA. Parking available.',
+    breadcrumb: {
+      home: 'Home',
+      current: 'Head SPA',
+    },
+    data: {
+      title: 'HEAD SPA ',
+      subtitle: 'Trichological',
+      description: "<b>Head Spa</b> is a unique care ritual for the scalp and hair that combines <b>relaxing spa techniques with professional trichological knowledge</b>. <br><br> Unlike classic care treatments, Head Spa in my clinic is not just a massage or a cosmetic treatment — it is a <b>conscious therapy of the scalp</b>, based on the individual needs of the client. <br><br> During the treatment, carefully selected trichological preparations and techniques are used, which:",
+      list: {
+        point1: 'cleanse the scalp,',
+        point2: 'support hair growth,',
+        point3: 'improve microcirculation,',
+        point4: 'reduce tension and stress.',
+      },
+    }
   },
 
   // Pricing Page
@@ -75,7 +249,7 @@ export default {
     pricingTreatments: {
       title: 'Trichology Therapy',
       a: 'Trichological treatment - individual therapy',
-      b: 'Oxygen infusion',
+      b: 'Oxygen infusion - individual therapy',
       c: 'Trichological treatment + Oxygen infusion',
       d: 'Microneedling mesotherapy',
     },
@@ -89,27 +263,41 @@ export default {
     startingPacks: {
       title: 'Packages',
       subtitle: 'Starter packages',
+      description: 'Recommended for those starting trichological therapy',
       cta: 'Book Now',
       package1: {
         name: 'Consultation with trichoscopy + trichological treatment',
         option1: 'interview + trichoscopy',
-        option2: 'individually tailored therapy',
-        option3: 'treatment tailored to needs',
-        option4: 'clear recommendations to start',
+        option2: 'scalp and hair condition analysis',
+        option3: 'individually prepared TRICHOPLAN',
+        option4: 'trichological treatment',
+        option5: 'clear recommendations to start',
       },
       package2: {
         name: 'Consultation with trichoscopy + oxygen infusion',
-        option1: 'diagnostics (interview + trichoscopy)',
-        option2: 'oxygen infusion of the scalp',
-        option3: 'selection of care',
-        option4: 'plan of next steps',
+        option1: 'interview + trichoscopy',
+        option2: 'scalp and hair condition analysis',
+        option3: 'individually prepared TRICHOPLAN',
+        option4: 'oxygen infusion treatment',
+        option5: 'clear recommendations to start',
       },
       package3: {
         name: 'Consultation with trichoscopy + combined treatment',
-        option1: 'trichological diagnostics',
-        option2: 'combined treatment (multifaceted action)',
-        option3: 'individual care recommendations',
-        option4: 'plan of further steps',
+        option1: 'interview + trichoscopy',
+        option2: 'scalp and hair condition analysis',
+        option3: 'individually prepared TRICHOPLAN',
+        option4: 'expanded trichological treatment',
+        option5: 'clear recommendations to start',
+      },
+    },
+    voucher: {
+      subtitle: 'Gift Voucher',
+      title: 'Give Your Loved Ones a Unique Gift',
+      description: 'Looking for the perfect gift for a loved one? Give a voucher for a trichological consultation or treatment at the Hair & Hair clinic! It\'s a great way to care for the health of the scalp and hair and bring joy to someone special.',
+      cta: 'Order Voucher',
+      email: {
+        subject: 'Inquiry about Hair & Hair Gift Voucher',
+        body: 'Hello,\n\nI would like to order a gift voucher for trichological services at the Hair & Hair clinic. Please provide information about available options, prices, and how to redeem the voucher.\n\nThank you in advance for your help.\n\nBest regards,\n[Your name]',
       },
     },
   },

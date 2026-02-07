@@ -12,7 +12,7 @@ eleventyComputed:
 
 <!--Page Header Start-->
 <section class="page-header">
-    <div class="page-header__bg" style="background-image: url(/assets/images/backgrounds/hah_3.jpg);">
+    <div class="page-header__bg" style="background-image: url(/assets/images/backgrounds/hah_4.jpg);">
     </div>
     <div class="container">
         <div class="page-header__inner">
@@ -27,127 +27,77 @@ eleventyComputed:
 </section>
 <!--Page Header End-->
 
-<!--Spa Center Three Start-->
-<section class="spa-center-three">
-    <div class="container">
-        <div class="section-title text-center">
-            <span class="section-title__tagline">Locations</span>
-            <h2 class="section-title__title">Our Spa Centers</h2>
-        </div>
-        <div class="row">
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="spa-center-three__single">
-                    <h3 class="spa-center-three__title">Austin</h3>
-                    <p class="spa-center-three__text">22 Texas West Hills
-                        <br> Mon - Fri: 9:00 to 19:00</p>
-                    <div class="spa-center-three__contact">
-                        <a href="mailto:needhelp@company.com">needhelp@company.com</a>
-                        <a href="tel:8889990000">888 999 0000</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="spa-center-three__single">
-                    <h3 class="spa-center-three__title">Boston</h3>
-                    <p class="spa-center-three__text">22 Texas West Hills
-                        <br> Mon - Fri: 9:00 to 19:00</p>
-                    <div class="spa-center-three__contact">
-                        <a href="mailto:needhelp@company.com">needhelp@company.com</a>
-                        <a href="tel:8889990000">888 999 0000</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="spa-center-three__single">
-                    <h3 class="spa-center-three__title">New York</h3>
-                    <p class="spa-center-three__text">22 Texas West Hills
-                        <br> Mon - Fri: 9:00 to 19:00</p>
-                    <div class="spa-center-three__contact">
-                        <a href="mailto:needhelp@company.com">needhelp@company.com</a>
-                        <a href="tel:8889990000">888 999 0000</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="spa-center-three__single">
-                    <h3 class="spa-center-three__title">Baltomore</h3>
-                    <p class="spa-center-three__text">22 Texas West Hills
-                        <br> Mon - Fri: 9:00 to 19:00</p>
-                    <div class="spa-center-three__contact">
-                        <a href="mailto:needhelp@company.com">needhelp@company.com</a>
-                        <a href="tel:8889990000">888 999 0000</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Spa Center Three End-->
-
-<!--Contact Page Start-->
-<section class="contact-page">
+<!--Client Issues Start-->
+<section class="client-issues">
     <div class="container">
         <div class="row">
-            <div class="col-xl-4 col-lg-5">
-                <div class="contact-page__left">
+            <div class="col-xl-6 col-lg-6">
+                <div class="client-issues__left">
+                    <div class="client-issues__img-box">
+                        <div class="client-issues__img">
+                            <img src="/assets/images/backgrounds/contact.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="client-issues__right">
                     <div class="section-title text-left">
-                        <span class="section-title__tagline">Contact us</span>
-                        <h2 class="section-title__title">Send a Message</h2>
+                        <span class="section-title__tagline">{{ 'contact.reachout.tagline' | t(locale) }}</span>
+                        <h2 class="section-title__title">{{ 'contact.reachout.title' | t(locale) }}</h2>
                     </div>
-                    <p class="contact-page__text">Interested in our spa services? We want your <br> spa
-                        experience to
-                        be a memorable one.</p>
-                    <div class="contact-page__social">
-                        <a href="{{ site.links.facebook }}"><i class="fab fa-facebook"></i></a>
-                        <a href="{{ site.links.instagram }}"><i class="fab fa-instagram"></i></a>
+                    <p class="client-issues__text">{{ 'contact.reachout.description' | t(locale) }}</p>
+                    <ul class="client-issues__points list-unstyled">
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'contact.reachout.point1' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'contact.reachout.point2' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'contact.reachout.point3' | t(locale) }}</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="client-issues__contacts">
+                        <div class="client-issues__contact-links">
+                            <a class="client-issues__contact-link" href="mailto:{{ site.email }}">
+                                <span class="client-issues__contact-icon"><i class="far fa-envelope"></i></span>
+                                <span class="client-issues__contact-text">{{ site.email }}</span>
+                            </a>
+                            <a class="client-issues__contact-link" href="tel:{{ site.phone }}">
+                                <span class="client-issues__contact-icon"><i class="fas fa-phone-alt"></i></span>
+                                <span class="client-issues__contact-text">{{ site.phone }}</span>
+                            </a>
+                        </div>
+                        <div class="client-issues__social contact-page__social">
+                            <a href="{{ site.links.facebook }}" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="{{ site.links.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-xl-8 col-lg-7">
-                <div class="contact-page__right">
-                    <div class="contact-page__content">
-                        <form action="assets/inc/sendemail.php"
-                            class="contact-page__form contact-form-validated" novalidate="novalidate">
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="contact-page__form-input-box">
-                                        <input type="text" placeholder="Full Name" name="name">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="contact-page__form-input-box">
-                                        <input type="email" placeholder="Email Address" name="email">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="contact-page__form-input-box">
-                                        <input type="text" placeholder="Phone" name="Phone">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="contact-page__form-input-box">
-                                        <input type="text" placeholder="Subject" name="Subject">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="contact-page__form-input-box text-message-box">
-                                    <textarea name="message" placeholder="Write a Message"></textarea>
-                                </div>
-                                <div class="contact-page__btn-box">
-                                    <button type="submit" class="thm-btn contact-page__btn">Send a
-                                        message</button>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="result"></div>
+                    <div class="contact-page__btn-box">
+                        <a href="{% if locale == 'en' %}/en/booking/{% else %}/booking/{% endif %}" class="thm-btn contact-page__btn">{{ 'contact.reachout.cta' | t(locale) }}</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!--Contact Page End-->
+<!--Client Issues End-->
 
 <!--Google Map Start-->
 <section class="contact-page__google-map">

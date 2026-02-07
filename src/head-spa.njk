@@ -1,0 +1,91 @@
+---
+pagination:
+  data: translations.locales
+  size: 1
+  alias: locale
+permalink: "{% if locale == 'en' %}/en/head-spa/{% else %}/head-spa/{% endif %}"
+layout: layout.njk
+eleventyComputed:
+  title: "{{ 'headSpa.title' | t(locale) }}"
+  description: "{{ 'headSpa.description' | t(locale) }}"
+---
+
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(/assets/images/backgrounds/headSpa.jpg);">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <ul class="thm-breadcrumb list-unstyled">
+                <li>
+                    <a href="{% if locale == 'en' %}/en/{% else %}/{% endif %}">{{ 'headSpa.breadcrumb.home' | t(locale) }}</a>
+                </li>
+                <li><span>/</span></li>
+                <li>{{ 'headSpa.breadcrumb.current' | t(locale) }}</li>
+            </ul>
+            <h1 style="color: #fff">{{ 'headSpa.title' | t(locale) }}</h1>
+        </div>
+    </div> 
+</section>
+<!--Page Header End-->
+
+<!--Client Issues Start-->
+<section class="client-issues">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="client-issues__left">
+                    <div class="client-issues__img-box">
+                        <div class="client-issues__img">
+                            <img src="/assets/images/resources/head_spa2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="client-issues__right">
+                    <div class="section-title text-left">
+                        <span class="section-title__tagline">{{ 'headSpa.data.subtitle' | t(locale) }}</span>
+                        <h2 class="section-title__title">{{ 'headSpa.data.title' | t(locale) }}</h2>
+                    </div>
+                    <p class="client-issues__text">{{ 'headSpa.data.description' | t(locale) | safe  }}</p>
+                    <ul class="client-issues__points list-unstyled">
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'headSpa.data.list.point1' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'headSpa.data.list.point2' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'headSpa.data.list.point3' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'headSpa.data.list.point4' | t(locale) }}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Client Issues End-->

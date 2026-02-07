@@ -1,0 +1,265 @@
+---
+pagination:
+  data: translations.locales
+  size: 1
+  alias: locale
+permalink: "{% if locale == 'en' %}/en/treatments/{% else %}/treatments/{% endif %}"
+layout: layout.njk
+eleventyComputed:
+  title: "{{ 'treatments.title' | t(locale) }}"
+  description: "{{ 'treatments.description' | t(locale) }}"
+---
+
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(/assets/images/backgrounds/treatments.jpg);">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <ul class="thm-breadcrumb list-unstyled">
+                <li>
+                    <a href="{% if locale == 'en' %}/en/{% else %}/{% endif %}">{{ 'treatments.breadcrumb.home' | t(locale) }}</a>
+                </li>
+                <li><span>/</span></li>
+                <li>{{ 'treatments.breadcrumb.current' | t(locale) }}</li>
+            </ul>
+            <h1 style="color: #fff">{{ 'treatments.title' | t(locale) }}</h1>
+        </div>
+    </div> 
+</section>
+<!--Page Header End-->
+
+
+<!--Client Issues Start-->
+<section class="client-issues">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="client-issues__left">
+                    <div class="client-issues__img-box">
+                        <div class="client-issues__img">
+                            <img src="/assets/images/resources/treatments.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="client-issues__right">
+                    <div class="section-title text-left">
+                        <span class="section-title__tagline">{{ 'treatments.data.subtitle' | t(locale) }}</span>
+                        <h2 class="section-title__title">{{ 'treatments.data.title' | t(locale) }}</h2>
+                    </div>
+                    <p class="client-issues__text">{{ 'treatments.data.description' | t(locale) | safe  }}</p>
+                    <hr>
+                    <h4 class="client-issues__small-title">{{ 'treatments.data.sections.recommended.title' | t(locale) }}</h4>
+                    <ul class="client-issues__points list-unstyled">
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.recommended.list.point1' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.recommended.list.point2' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.recommended.list.point3' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.recommended.list.point4' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.recommended.list.point5' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.recommended.list.point6' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.recommended.list.point7' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.recommended.list.point8' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.recommended.list.point9' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.recommended.list.point10' | t(locale) }}</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <hr>
+                    <h4 class="client-issues__small-title">{{ 'treatments.data.sections.effects.title' | t(locale) }}</h4>
+                    <ul class="client-issues__points list-unstyled">
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.effects.list.point1' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.effects.list.point2' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.effects.list.point3' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.effects.list.point4' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.effects.list.point5' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.effects.list.point6' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.effects.list.point7' | t(locale) }}</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <hr>
+                    <h4 class="client-issues__small-title">{{ 'treatments.data.sections.keyInfo.title' | t(locale) }}</h4>
+                    <ul class="client-issues__points list-unstyled">
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.keyInfo.list.point1' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.keyInfo.list.point2' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.keyInfo.list.point3' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.keyInfo.list.point4' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'treatments.data.sections.keyInfo.list.point5' | t(locale) }}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Client Issues End-->
+
+<!--Before And After Start-->
+<section class="before-and-after">
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="section-title__tagline">{{ 'treatments.beforeAfter.subtitle' | t(locale) }}</span>
+            <h2 class="section-title__title">{{ 'treatments.beforeAfter.title' | t(locale) }}</h2>
+        </div>
+        <div class="before-and-after__img-box">
+            <div class="before-after">
+                <div class="before-after-twentytwenty" id="wrinkle-before-after">
+                    <img src="/assets/images/resources/after1.jpg" alt="">
+                    <img src="/assets/images/resources/before1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Before And After End-->

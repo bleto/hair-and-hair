@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#27252a" />
   
-  <title>{{ site.siteTitle }}{% if title %} – {{ title }}{% endif %}</title>
-  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.siteDescription }}{% endif %}" />
+  <title>{{ 'siteTitle' | t(locale) }}{% if title %} – {{ title }}{% endif %}</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ 'siteDescription' | t(locale) }}{% endif %}" />
   <meta name="keywords" content="{{ site.siteKeywords }}" />
-  <meta name="author" content="{{ site.siteTitle }}" />
+  <meta name="author" content="{{ 'siteTitle' | t(locale) }}" />
   <link rel="canonical" href="{{ site.siteUrl }}{{ page.url }}" />
   
   <!-- Alternate language versions -->
@@ -19,18 +19,19 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ site.siteUrl }}{{ page.url }}" />
-  <meta property="og:title" content="{{ site.siteTitle }}{% if title %} – {{ title }}{% endif %}" />
-  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.siteDescription }}{% endif %}" />
-  <meta property="og:image" content="{{ site.siteUrl }}assets/images/backgrounds/hah_1.jpg" />
-  <meta property="og:locale" content="pl_PL" />
-  <meta property="og:site_name" content="{{ site.siteTitle }}" />
+  <meta property="og:title" content="{{ 'siteTitle' | t(locale) }}{% if title %} – {{ title }}{% endif %}" />
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ 'siteDescription' | t(locale) }}{% endif %}" />
+  <meta property="og:image" content="{{ site.siteUrl }}/assets/images/backgrounds/hah_1.jpg" />
+  <meta property="og:locale" content="{% if locale == 'en' %}en_US{% else %}pl_PL{% endif %}" />
+  <meta property="og:locale:alternate" content="{% if locale == 'en' %}pl_PL{% else %}en_US{% endif %}" />
+  <meta property="og:site_name" content="{{ 'siteTitle' | t(locale) }}" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="{{ site.siteUrl }}{{ page.url }}" />
-  <meta property="twitter:title" content="{{ site.siteTitle }}{% if title %} – {{ title }}{% endif %}" />
-  <meta property="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.siteDescription }}{% endif %}" />
-  <meta property="twitter:image" content="{{ site.siteUrl }}assets/images/backgrounds/hah_1.jpg" />
+  <meta property="twitter:title" content="{{ 'siteTitle' | t(locale) }}{% if title %} – {{ title }}{% endif %}" />
+  <meta property="twitter:description" content="{% if description %}{{ description }}{% else %}{{ 'siteDescription' | t(locale) }}{% endif %}" />
+  <meta property="twitter:image" content="{{ site.siteUrl }}/assets/images/backgrounds/hah_1.jpg" />
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png?v=2" />
@@ -80,10 +81,10 @@
   {
     "@context": "https://schema.org",
     "@type": "HairSalon",
-    "name": "{{ site.siteTitle }}",
-    "description": "{{ site.siteDescription }}",
+    "name": "{{ 'siteTitle' | t(locale) }}",
+    "description": "{{ 'siteDescription' | t(locale) }}",
     "url": "{{ site.siteUrl }}",
-    "telephone": "+48{{ site.phone }}",
+    "telephone": "{{ site.phone }}",
     "email": "{{ site.email }}",
     "address": {
       "@type": "PostalAddress",
@@ -110,6 +111,25 @@
     "priceRange": "$$"
   }
   </script>
+
+  {% if site.ga4MeasurementId %}
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4MeasurementId }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('set', 'user_properties', { language: '{{ locale }}' });
+    gtag('config', '{{ site.ga4MeasurementId }}', {
+      send_page_view: false,
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname,
+      language: '{{ locale }}'
+    });
+    gtag('event', 'page_view', { language: '{{ locale }}' });
+  </script>
+  {% endif %}
 </head>
 
 <body>
@@ -125,6 +145,31 @@
     </main>
 
     {% include "footer.njk" %}
+  </div>
+
+  <div class="cookie-banner" data-cookie-banner hidden>
+    <div class="container">
+      <div class="cookie-banner__inner">
+        <div class="cookie-banner__content">
+          <div class="cookie-banner__title">{{ 'cookieBanner.title' | t(locale) }}</div>
+          <div class="cookie-banner__text">{{ 'cookieBanner.text' | t(locale) }}</div>
+          <a
+            class="cookie-banner__link"
+            href="{% if locale == 'en' %}/assets/files/privacy_en.pdf{% else %}/assets/files/privacy_pl.pdf{% endif %}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >{{ 'cookieBanner.privacy' | t(locale) }}</a>
+        </div>
+        <div class="cookie-banner__actions">
+          <button class="thm-btn cookie-banner__btn" type="button" data-cookie-accept>
+            {{ 'cookieBanner.accept' | t(locale) }}
+          </button>
+          <button class="thm-btn cookie-banner__btn cookie-banner__btn--ghost" type="button" data-cookie-reject>
+            {{ 'cookieBanner.reject' | t(locale) }}
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>

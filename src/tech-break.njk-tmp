@@ -1,0 +1,29 @@
+---
+pagination:
+  data: translations.locales
+  size: 1
+  alias: locale
+permalink: "{% if locale == 'en' %}/en/{% else %}/{% endif %}"
+# 🚧 TYMCZASOWO: construction.njk - pokazuje tylko "strona w budowie" (dla pierwszego deploya)
+# ✅ DOCELOWO: layout.njk - przywróć aby pokazać pełną stronę
+layout: construction.njk
+eleventyComputed:
+  title: "{{ 'home.title' | t(locale) }}"
+  description: "{{ 'home.description' | t(locale) }}"
+---
+
+{# INSTRUKCJA: Aby pokazać pełną stronę zmień layout na: layout.njk #}
+
+<div class="construction-container">
+    <div class="icon">🚧</div>
+    <h1>{{ 'underConstruction.title' | t(locale) }}</h1>
+    <p>{{ 'underConstruction.message' | t(locale) }}</p>
+    
+    <div class="contact-info">
+        <p>
+            📧 <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+            📱 <a href="tel:{{ site.phone }}">{{ site.phone }}</a><br>
+            📍 Kraków, Polska
+        </p>
+    </div>
+</div>

@@ -531,6 +531,31 @@
         display: none;
     }
 
+    /* Services Two - responsywność dla małych ekranów */
+    .services-two__services-name h3 {
+        font-size: 14px;
+    }
+
+    .services-two__services-name p {
+        font-size: 10px;
+        margin-left: 8px;
+    }
+
+    .services-two__services-price h4 {
+        font-size: 14px;
+    }
+
+    .services-two__title {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 30px;
+    }
+
+    .services-two__list li {
+        padding-bottom: 18px;
+        margin-bottom: 20px;
+    }
+
     .welcome-one__left {
         margin-right: 0;
     }
@@ -598,6 +623,11 @@
 
     .testimonial-one__single {
         padding: 60px 30px 60px;
+    }
+
+    .spa-center__title {
+        font-size: 30px;
+        line-height: 40px;
     }
 
     .spa-center__title br {
@@ -1139,7 +1169,8 @@
     }
 
     .main-menu__right {
-        display: none;
+        display: flex !important;
+        align-items: center;
     }
 
     .main-menu .mobile-nav__toggler {
