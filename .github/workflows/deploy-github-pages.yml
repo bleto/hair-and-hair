@@ -6,6 +6,10 @@ on:
     branches:
       - main # Zmień na master jeśli używasz master branch
 
+  # Automatyczne odświeżanie postów Instagram - co tydzień
+  schedule:
+    - cron: '0 3 * * 1'  # Każdy poniedziałek o 3:00 UTC (4:00/5:00 czasu polskiego)
+
   # Możliwość ręcznego uruchomienia
   workflow_dispatch:
 

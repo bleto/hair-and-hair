@@ -18,13 +18,13 @@ export default {
     {
       name: 'pricing.pricingConsultations.d',
       duration: '30min',
-      price: '120 zł',
+      price: '100 zł',
     },
   ],
   treatments: [
-    { name: 'pricing.pricingTreatments.a', duration: '60min', price: '240 zł' },
-    { name: 'pricing.pricingTreatments.b', duration: '60min', price: '240 zł' },
-    { name: 'pricing.pricingTreatments.c', duration: '90min', price: '400 zł' },
+    { name: 'pricing.pricingTreatments.a', duration: '60min', price: '220 zł' },
+    { name: 'pricing.pricingTreatments.b', duration: '60min', price: '220 zł' },
+    { name: 'pricing.pricingTreatments.c', duration: '90min', price: '320 zł' },
     { name: 'pricing.pricingTreatments.d', duration: '60min', price: '400 zł' },
   ],
   headSpa: [

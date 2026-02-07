@@ -1,0 +1,148 @@
+---
+pagination:
+  data: translations.locales
+  size: 1
+  alias: locale
+permalink: "{% if locale == 'en' %}/en/consultations-online/{% else %}/consultations-online/{% endif %}"
+layout: layout.njk
+eleventyComputed:
+  title: "{{ 'consultationsOnline.title' | t(locale) }}"
+  description: "{{ 'consultationsOnline.description' | t(locale) }}"
+---
+
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(/assets/images/backgrounds/red_hair.jpg);">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <ul class="thm-breadcrumb list-unstyled">
+                <li>
+                    <a href="{% if locale == 'en' %}/en/{% else %}/{% endif %}">{{ 'consultationsOnline.breadcrumb.home' | t(locale) }}</a>
+                </li>
+                <li><span>/</span></li>
+                <li>{{ 'consultationsOnline.breadcrumb.current' | t(locale) }}</li>
+            </ul>
+            <h1 style="color: #fff">{{ 'consultationsOnline.title' | t(locale) }}</h1>
+        </div>
+    </div> 
+</section>
+<!--Page Header End-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{ 'consultationsOnline.faq.q1' | t(locale) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ 'consultationsOnline.faq.a1' | t(locale) }}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'consultationsOnline.faq.q2' | t(locale) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ 'consultationsOnline.faq.a2' | t(locale) }}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'consultationsOnline.faq.q3' | t(locale) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ 'consultationsOnline.faq.a3' | t(locale) }}"
+      }
+    }
+  ]
+}
+</script>
+
+
+<!--Client Issues Start-->
+<section class="client-issues">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="client-issues__left">
+                    <div class="client-issues__img-box">
+                        <div class="client-issues__img">
+                            <img src="/assets/images/resources/consultation-online.jpg" alt="{{ 'consultationsOnline.imageAlt' | t(locale) }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="client-issues__right">
+                    <div class="section-title text-left">
+                        <span class="section-title__tagline">{{ 'consultationsOnline.data.subtitle' | t(locale) }}</span>
+                        <h2 class="section-title__title">{{ 'consultationsOnline.data.title' | t(locale) }}</h2>
+                    </div>
+                    <p class="client-issues__text">{{ 'consultationsOnline.data.description' | t(locale) | safe  }}</p>
+                    <ul class="client-issues__points list-unstyled">
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'consultationsOnline.data.list.point1' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'consultationsOnline.data.list.point2' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'consultationsOnline.data.list.point3' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'consultationsOnline.data.list.point4' | t(locale) }}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <div class="text">
+                                <p>{{ 'consultationsOnline.data.list.point5' | t(locale) }}</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <br>
+                    <p class="client-issues__text">{{ 'consultationsOnline.data.descriptionCd' | t(locale) | safe  }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Client Issues End-->
+
+<section class="faq-cta">
+    <div class="container">
+        <div class="faq-cta__inner text-center">
+            <div class="section-title text-center">
+                <span class="section-title__tagline">{{ 'consultationsOnline.faqCta.subtitle' | t(locale) }}</span>
+                <h2 class="section-title__title">{{ 'consultationsOnline.faqCta.title' | t(locale) }}</h2>
+                <p class="section-title__text">{{ 'consultationsOnline.faqCta.text' | t(locale) }}</p>
+            </div>
+            <a href="{% if locale == 'en' %}/en/faq/#faq-consultations-online{% else %}/faq/#faq-consultations-online{% endif %}" class="thm-btn">{{ 'consultationsOnline.faqCta.link' | t(locale) }}</a>
+        </div>
+    </div>
+</section>

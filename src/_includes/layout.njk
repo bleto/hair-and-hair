@@ -5,11 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#27252a" />
   
-  <title>{{ site.siteTitle }}{% if title %} – {{ title }}{% endif %}</title>
-  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.siteDescription }}{% endif %}" />
+  {% set pageTitle = title or ('siteTitle' | t(locale)) %}
+  {% set pageDescription = description or ('siteDescription' | t(locale)) %}
+  {% set ogImage = site.siteUrl ~ '/assets/images/backgrounds/hah_1.jpg' %}
+  {% if page.url == '/treatments/' or page.url == '/en/treatments/' %}
+    {% set ogImage = site.siteUrl ~ '/assets/images/backgrounds/treatments.jpg' %}
+  {% elif page.url == '/consultations/' or page.url == '/en/consultations/' %}
+    {% set ogImage = site.siteUrl ~ '/assets/images/backgrounds/consultation.jpg' %}
+  {% elif page.url == '/consultations-online/' or page.url == '/en/consultations-online/' %}
+    {% set ogImage = site.siteUrl ~ '/assets/images/backgrounds/red_hair.jpg' %}
+  {% elif page.url == '/head-spa/' or page.url == '/en/head-spa/' %}
+    {% set ogImage = site.siteUrl ~ '/assets/images/backgrounds/headSpa.jpg' %}
+  {% elif page.url == '/pricing/' or page.url == '/en/pricing/' %}
+    {% set ogImage = site.siteUrl ~ '/assets/images/backgrounds/hah_5.jpg' %}
+  {% elif page.url == '/contact/' or page.url == '/en/contact/' %}
+    {% set ogImage = site.siteUrl ~ '/assets/images/backgrounds/contact.jpg' %}
+  {% endif %}
+
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}" />
   <meta name="keywords" content="{{ site.siteKeywords }}" />
-  <meta name="author" content="{{ site.siteTitle }}" />
+  <meta name="author" content="{{ 'siteTitle' | t(locale) }}" />
   <link rel="canonical" href="{{ site.siteUrl }}{{ page.url }}" />
+
+  {% if page.url and '404' in page.url %}
+  <meta name="robots" content="noindex,follow" />
+  {% endif %}
   
   <!-- Alternate language versions -->
   <link rel="alternate" hreflang="pl" href="{{ site.siteUrl }}{{ page.url | alternateUrl('pl') }}" />
@@ -19,18 +40,21 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ site.siteUrl }}{{ page.url }}" />
-  <meta property="og:title" content="{{ site.siteTitle }}{% if title %} – {{ title }}{% endif %}" />
-  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.siteDescription }}{% endif %}" />
-  <meta property="og:image" content="{{ site.siteUrl }}assets/images/backgrounds/hah_1.jpg" />
-  <meta property="og:locale" content="pl_PL" />
-  <meta property="og:site_name" content="{{ site.siteTitle }}" />
+  <meta property="og:title" content="{{ pageTitle }}" />
+  <meta property="og:description" content="{{ pageDescription }}" />
+  <meta property="og:image" content="{{ ogImage }}" />
+  <meta property="og:image:alt" content="{{ pageTitle }}" />
+  <meta property="og:locale" content="{% if locale == 'en' %}en_US{% else %}pl_PL{% endif %}" />
+  <meta property="og:locale:alternate" content="{% if locale == 'en' %}pl_PL{% else %}en_US{% endif %}" />
+  <meta property="og:site_name" content="{{ 'siteTitle' | t(locale) }}" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="{{ site.siteUrl }}{{ page.url }}" />
-  <meta property="twitter:title" content="{{ site.siteTitle }}{% if title %} – {{ title }}{% endif %}" />
-  <meta property="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.siteDescription }}{% endif %}" />
-  <meta property="twitter:image" content="{{ site.siteUrl }}assets/images/backgrounds/hah_1.jpg" />
+  <meta property="twitter:title" content="{{ pageTitle }}" />
+  <meta property="twitter:description" content="{{ pageDescription }}" />
+  <meta property="twitter:image" content="{{ ogImage }}" />
+  <meta property="twitter:image:alt" content="{{ pageTitle }}" />
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png?v=2" />
@@ -76,14 +100,37 @@
   <link rel="stylesheet" href="/assets/css/language-switcher.css" />
 
   <!-- Schema.org structured data -->
+  {% set ldImage = site.siteUrl ~ '/assets/images/backgrounds/hah_1.jpg' %}
+  {% set ldPriceRange = '$$' %}
+  {% if page.url == '/treatments/' or page.url == '/en/treatments/' %}
+    {% set ldImage = site.siteUrl ~ '/assets/images/backgrounds/treatments.jpg' %}
+    {% set ldPriceRange = '$$' %}
+  {% elif page.url == '/consultations/' or page.url == '/en/consultations/' %}
+    {% set ldImage = site.siteUrl ~ '/assets/images/backgrounds/consultation.jpg' %}
+    {% set ldPriceRange = '$$' %}
+  {% elif page.url == '/consultations-online/' or page.url == '/en/consultations-online/' %}
+    {% set ldImage = site.siteUrl ~ '/assets/images/backgrounds/red_hair.jpg' %}
+    {% set ldPriceRange = '$$' %}
+  {% elif page.url == '/head-spa/' or page.url == '/en/head-spa/' %}
+    {% set ldImage = site.siteUrl ~ '/assets/images/backgrounds/headSpa.jpg' %}
+    {% set ldPriceRange = '$$$' %}
+  {% elif page.url == '/pricing/' or page.url == '/en/pricing/' %}
+    {% set ldImage = site.siteUrl ~ '/assets/images/backgrounds/hah_5.jpg' %}
+    {% set ldPriceRange = '$$' %}
+  {% elif page.url == '/contact/' or page.url == '/en/contact/' %}
+    {% set ldImage = site.siteUrl ~ '/assets/images/backgrounds/contact.jpg' %}
+  {% endif %}
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "HairSalon",
-    "name": "{{ site.siteTitle }}",
-    "description": "{{ site.siteDescription }}",
+    "@type": "MedicalClinic",
+    "@id": "{{ site.siteUrl }}#organization",
+    "name": "{{ 'siteTitle' | t(locale) }}",
+    "description": "{{ 'siteDescription' | t(locale) }}",
     "url": "{{ site.siteUrl }}",
-    "telephone": "+48{{ site.phone }}",
+    "image": "{{ ldImage }}",
+    "telephone": "{{ site.phone }}",
     "email": "{{ site.email }}",
     "address": {
       "@type": "PostalAddress",
@@ -97,19 +144,95 @@
       "latitude": "50.02585",
       "longitude": "19.91899"
     },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
+    "hasMap": "https://www.google.com/maps?q=50.02585,19.91899",
+    "areaServed": {
+      "@type": "City",
+      "name": "Kraków"
     },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
     "sameAs": [
       "{{ site.links.facebook }}",
       "{{ site.links.instagram }}"
     ],
-    "priceRange": "$$"
+    "priceRange": "{{ ldPriceRange }}",
+    "department": [
+      {
+        "@type": "BeautySalon",
+        "name": "Head SPA",
+        "url": "{{ site.siteUrl }}{% if locale == 'en' %}/en/head-spa/{% else %}/head-spa/{% endif %}"
+      }
+    ]
   }
   </script>
+
+  {% set breadcrumbName = '' %}
+  {% if page.url == '/treatments/' or page.url == '/en/treatments/' %}
+    {% set breadcrumbName = 'treatments.breadcrumb.current' | t(locale) %}
+  {% elif page.url == '/consultations/' or page.url == '/en/consultations/' %}
+    {% set breadcrumbName = 'consultations.breadcrumb.current' | t(locale) %}
+  {% elif page.url == '/consultations-online/' or page.url == '/en/consultations-online/' %}
+    {% set breadcrumbName = 'consultationsOnline.breadcrumb.current' | t(locale) %}
+  {% elif page.url == '/head-spa/' or page.url == '/en/head-spa/' %}
+    {% set breadcrumbName = 'headSpa.breadcrumb.current' | t(locale) %}
+  {% elif page.url == '/pricing/' or page.url == '/en/pricing/' %}
+    {% set breadcrumbName = 'pricing.breadcrumb.current' | t(locale) %}
+  {% elif page.url == '/booking/' or page.url == '/en/booking/' %}
+    {% set breadcrumbName = 'booking.breadcrumb.current' | t(locale) %}
+  {% elif page.url == '/contact/' or page.url == '/en/contact/' %}
+    {% set breadcrumbName = 'contact.breadcrumb.current' | t(locale) %}
+  {% elif page.url == '/faq/' or page.url == '/en/faq/' %}
+    {% set breadcrumbName = 'faqPage.breadcrumb.current' | t(locale) %}
+  {% endif %}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{% if locale == 'en' %}Home{% else %}Strona główna{% endif %}",
+        "item": "{{ site.siteUrl }}{% if locale == 'en' %}/en/{% else %}/{% endif %}"
+      }
+      {% if breadcrumbName %}
+      ,
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ breadcrumbName }}",
+        "item": "{{ site.siteUrl }}{{ page.url }}"
+      }
+      {% endif %}
+    ]
+  }
+  </script>
+
+  {% if site.ga4MeasurementId %}
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4MeasurementId }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('set', 'user_properties', { language: '{{ locale }}' });
+    gtag('config', '{{ site.ga4MeasurementId }}', {
+      send_page_view: false,
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname,
+      language: '{{ locale }}'
+    });
+    gtag('event', 'page_view', { language: '{{ locale }}' });
+  </script>
+  {% endif %}
 </head>
 
 <body>
@@ -125,6 +248,31 @@
     </main>
 
     {% include "footer.njk" %}
+  </div>
+
+  <div class="cookie-banner" data-cookie-banner hidden>
+    <div class="container">
+      <div class="cookie-banner__inner">
+        <div class="cookie-banner__content">
+          <div class="cookie-banner__title">{{ 'cookieBanner.title' | t(locale) }}</div>
+          <div class="cookie-banner__text">{{ 'cookieBanner.text' | t(locale) }}</div>
+          <a
+            class="cookie-banner__link"
+            href="{% if locale == 'en' %}/assets/files/privacy_en.pdf{% else %}/assets/files/privacy_pl.pdf{% endif %}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >{{ 'cookieBanner.privacy' | t(locale) }}</a>
+        </div>
+        <div class="cookie-banner__actions">
+          <button class="thm-btn cookie-banner__btn" type="button" data-cookie-accept>
+            {{ 'cookieBanner.accept' | t(locale) }}
+          </button>
+          <button class="thm-btn cookie-banner__btn cookie-banner__btn--ghost" type="button" data-cookie-reject>
+            {{ 'cookieBanner.reject' | t(locale) }}
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>

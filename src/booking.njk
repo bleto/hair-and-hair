@@ -1,0 +1,51 @@
+---
+pagination:
+  data: translations.locales
+  size: 1
+  alias: locale
+permalink: "{% if locale == 'en' %}/en/booking/{% else %}/booking/{% endif %}"
+layout: layout.njk
+eleventyComputed:
+  title: "{{ 'booking.title' | t(locale) }}"
+  description: "{{ 'booking.description' | t(locale) }}"
+---
+
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(/assets/images/backgrounds/hah_3.jpg);">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <ul class="thm-breadcrumb list-unstyled">
+                <li><a href="{% if locale == 'en' %}/en/{% else %}/{% endif %}">{{ 'booking.breadcrumb.home' | t(locale) }}</a></li>
+                <li><span>/</span></li>
+                <li>{{ 'booking.breadcrumb.current' | t(locale) }}</li>
+            </ul>
+            <h1 style="color: #fff">{{ 'booking.title' | t(locale) }}</h1>
+        </div>
+    </div> 
+</section>
+<!--Page Header End-->
+
+
+<!--Booksy Page Start-->
+<section class="contact-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="contact-page__form-box iframeContainer" style="padding: 40px 0;">
+                    <!-- Booksy iframe będzie wstrzyknięty tutaj -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Booksy Page End-->
+
+<!--Google Map Start-->
+<section class="contact-page__google-map">
+    <iframe
+        src="{{ site.googleMapUrl }}"
+        class="contact-page__google-map-one" allowfullscreen></iframe>
+</section>
+<!--Google Map End-->

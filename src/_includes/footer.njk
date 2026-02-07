@@ -10,18 +10,22 @@
     <div class="site-footer__top">
       <div class="row">
         <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-          <div class="footer-widget__column footer-widget__contact-box">
+          <div class="footer-widget__column footer-widget__timing">
             <div class="footer-widget__title-box">
               <h4 class="footer-widget__title">{{ 'footer.contact' | t(locale) }}</h4>
             </div>
             <div class="footer-widget__contact">
               <a href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i> {{ site.email }}</a>
-              <a href="tel:{{ site.phone }}"><i class="fas fa-phone-alt"></i> +48 {{ site.phone }}</a>
+              <a href="tel:{{ site.phone }}"><i class="fas fa-phone-alt"></i> {{ site.phone }}</a>
+            </div>
+            <div class="site-footer__social">
+              <a href="{{ site.links.facebook }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+              <a href="{{ site.links.instagram }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
             </div>
           </div>
         </div>
 
-         <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+         <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
             <div class="footer-widget__column footer-widget__timing">
                 <div class="footer-widget__title-box">
                     <h4 class="footer-widget__title">{{ 'footer.address' | t(locale) }}</h4>
@@ -36,25 +40,17 @@
             </div>
         </div>
 
-        <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
           <div class="footer-widget__column footer-widget__links">
             <div class="footer-widget__title-box">
               <h4 class="footer-widget__title">{{ 'footer.links' | t(locale) }}</h4>
             </div>
             <ul class="footer-widget__links-list list-unstyled">
-              <li><a href="{% if locale == 'en' %}/en/training/{% else %}/training/{% endif %}">{{ 'nav.training' | t(locale) }}</a></li>
               <li><a href="{% if locale == 'en' %}/en/pricing/{% else %}/pricing/{% endif %}">{{ 'footer.pricing' | t(locale) }}</a></li>
+              <li><a href="{% if locale == 'en' %}/en/faq/{% else %}/faq/{% endif %}">{{ 'footer.faq' | t(locale) }}</a></li>
               <li><a href="{% if locale == 'en' %}/en/contact/{% else %}/contact/{% endif %}">{{ 'nav.contact' | t(locale) }}</a></li>
+              <li><a href="{% if locale == 'en' %}/en/booking/{% else %}/booking/{% endif %}">{{ 'nav.booking' | t(locale) }}</a></li>
             </ul>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-          <div class="footer-widget__column footer-widget__social-box">
-            <div class="site-footer__social">
-              <a href="{{ site.links.facebook }}"><i class="fab fa-facebook"></i></a>
-              <a href="{{ site.links.instagram }}"><i class="fab fa-instagram"></i></a>
-            </div>
           </div>
         </div>
       </div>
@@ -66,7 +62,13 @@
           <div class="site-footer__bottom-inner">
             <p class="site-footer__bottom-text">{{ 'footer.copyright' | t(locale) }} {{ site.year }} by <a href="https://github.com/bleto">bleto</a></p>
             <ul class="list-unstyled site-footer__bottom-menu">
-              <li><a href="#">{{ 'footer.privacy' | t(locale) }}</a></li>
+              <li>
+                <a
+                  href="{% if locale == 'en' %}/assets/files/privacy_en.pdf{% else %}/assets/files/privacy_pl.pdf{% endif %}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >{{ 'footer.privacy' | t(locale) }}</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -82,7 +84,7 @@
     <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
     <div class="logo-box">
-      <a href="/" aria-label="logo image"><img src="/assets/images/logo/logo_white.svg" width="90" alt="" /></a>
+      <a href="{% if locale == 'en' %}/en/{% else %}/{% endif %}" aria-label="logo image"><img src="/assets/images/logo/logo_white.svg" width="90" alt="{{ 'siteTitle' | t(locale) }}" /></a>
     </div>
 
     <div class="mobile-nav__container"></div>
@@ -100,8 +102,8 @@
 
     <div class="mobile-nav__top">
       <div class="mobile-nav__social">
-        <a href="{{ site.links.facebook }}" class="fab fa-facebook-square"></a>
-        <a href="{{ site.links.instagram }}" class="fab fa-instagram"></a>
+        <a href="{{ site.links.facebook }}" target="_blank" rel="noopener noreferrer" class="fab fa-facebook-square"></a>
+        <a href="{{ site.links.instagram }}" target="_blank" rel="noopener noreferrer" class="fab fa-instagram"></a>
       </div>
     </div>
   </div>
@@ -153,4 +155,51 @@
 
 <!-- Menu locale handler -->
 <script src="/assets/js/menu-locale.js"></script>
+
+<!-- 404 Page locale detection -->
+<script src="/assets/js/404-locale.js"></script>
+
+<!-- Cookie consent -->
+<script src="/assets/js/cookie-consent.js"></script>
+
+<!-- Analytics events -->
+<script src="/assets/js/analytics-events.js"></script>
+
+<!-- Booksy iframe handler -->
+<script type="module">
+  import { createWidgetContainer, createIframe } from '/assets/js/booksy.js';
+  
+  // Inicjalizuj Booksy tylko na stronie booking
+  if (window.location.pathname.includes('/booking')) {
+    const iframeData = {
+      id: 96326,
+      lang: window.location.pathname.includes('/en/booking') ? 'en' : 'pl',
+      country: 'pl',
+      mode: 'inline',
+      theme: 'default',
+    };
+    
+    const iframeSrc =
+      'https://booksy.com/widget/index.html?id=' +
+      iframeData.id +
+      '&lang=' +
+      iframeData.lang +
+      '&country=' +
+      iframeData.country +
+      '&mode=' +
+      iframeData.mode +
+      '&theme=' +
+      iframeData.theme;
+    
+    // Poczekaj aż DOM będzie gotowy
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.querySelector('.iframeContainer');
+      if (container) {
+        const widgetContainer = createWidgetContainer(iframeData);
+        createIframe(widgetContainer, iframeSrc);
+      }
+    });
+  }
+</script>
+
 <script src="/assets/js/mellis.js"></script>

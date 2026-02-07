@@ -10,10 +10,9 @@ eleventyComputed:
   description: "{{ 'pricing.description' | t(locale) }}"
 ---
 
-
 <!--Page Header Start-->
 <section class="page-header">
-    <div class="page-header__bg" style="background-image: url(/assets/images/backgrounds/hah_3.jpg);">
+    <div class="page-header__bg" style="background-image: url(/assets/images/backgrounds/hah_5.jpg);">
     </div>
     <div class="container">
         <div class="page-header__inner">
@@ -30,91 +29,6 @@ eleventyComputed:
 </section>
 <!--Page Header End-->
 
-<!--Services Two Start-->
-<section class="services-two">
-    <div class="container">
-        <div class="services-two__inner">
-            <div class="services-two__shape-1 float-bob-x">
-                <img src="/assets/images/shapes/services-two-shape-1.png" alt="">
-            </div>
-            <div class="row">
-                <!--Services Two Single Start-->
-                <div class="col-xl-6 col-lg-6">
-                    <div class="services-two__single">
-                        <h3 class="services-two__title">{{ 'pricing.pricingConsultations.title' | t(locale) }}</h3>
-                        <ul class="list-unstyled services-two__list">
-                            {% for it in services.consultations %}
-                            <li>
-                                <div class="services-two__services-name">
-                                    <h3><a href="services.html">{{ it.name | t(locale) }}</a></h3>
-                                    <p>{{ it.duration }}</p>
-                                </div>
-                                <div class="services-two__services-price">
-                                    <h4>{{ it.price }}</h4>
-                                </div>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-                <!--Services Two Single End-->
-                <!--Services Two Single Start-->
-                <div class="col-xl-6 col-lg-6">
-                    <div class="services-two__single">
-                        <h3 class="services-two__title">{{ 'pricing.pricingTreatments.title' | t(locale) }}</h3>
-                        <ul class="list-unstyled services-two__list">
-                            {% for it in services.treatments %}
-                            <li>
-                                <div class="services-two__services-name">
-                                    <h3><a href="services.html">{{ it.name | t(locale) }}</a></h3>
-                                    <p>{{ it.duration }}</p>
-                                </div>
-                                <div class="services-two__services-price">
-                                    <h4>{{ it.price }}</h4>
-                                </div>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-                <!--Services Two Single End-->
-            </div>
-            <br>
-            <div class="row">
-                 <!--Services Two Single Start-->
-                <div class="col-xl-6 col-lg-6 offset-xl-3 offset-lg-3">
-                    <div class="services-two__single">
-                        <h3 class="services-two__title">{{ 'pricing.headSPA.title' | t(locale) }}</h3>
-                        <ul class="list-unstyled services-two__list">
-                            {% for it in services.headSpa %}
-                            <li>
-                                <div class="services-two__services-name">
-                                    <h3><a href="services.html">{{ it.name | t(locale) }}</a></h3>
-                                    <p>{{ it.duration }}</p>
-                                </div>
-                                <div class="services-two__services-price">
-                                    <h4>{{ it.price }}</h4>
-                                </div>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-                <!--Services Two Single End-->
-            </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="services-two__btn-box">
-                        <a href="{% if locale == 'en' %}/en/bookings{% else %}/bookings{% endif %}" class="thm-btn services-two__btn">
-                            {{ 'pricing.bookNow' | t(locale) }}
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Services Two End-->
 
 <!--Pricing Plans Start-->
 <section class="pricing-plan">
@@ -122,6 +36,7 @@ eleventyComputed:
         <div class="section-title text-center">
             <span class="section-title__tagline">{{ 'pricing.startingPacks.title' | t(locale) }}</span>
             <h2 class="section-title__title">{{ 'pricing.startingPacks.subtitle' | t(locale) }}</h2>
+            <p class="section-title__text">{{ 'pricing.startingPacks.description' | t(locale) }}</p>
         </div>
         <div class="row">
             <!--Pricing Plan Single Start-->
@@ -136,7 +51,11 @@ eleventyComputed:
                         </div>
                     </div>
                     <div class="pricing-plan__bottom">
-                        <p class="pricing-plan__per-day"><span>450 zł</span>/ 120min</p>
+                        <p class="pricing-plan__per-day">
+                            <span class="pricing-plan__price pricing-plan__price--old">470 zł</span>
+                            <span class="pricing-plan__price">400 zł</span><br> 
+                            <span class="pricing-plan__time"><span class="fa fa-clock" aria-hidden="true"></span><span>120min</span></span>
+                        </p>
                         <ul class="pricing-plan__points list-unstyled">
                             <li>
                                 <div class="icon">
@@ -170,9 +89,17 @@ eleventyComputed:
                                     <p>{{ 'pricing.startingPacks.package1.option4' | t(locale) }}</p>
                                 </div>
                             </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package1.option5' | t(locale) }}</p>
+                                </div>
+                            </li>
                         </ul>
                         <div class="pricing-plan__btn-box">
-                            <a href="contact.html" class="pricing-plan__btn thm-btn">
+                            <a href="{% if locale == 'en' %}/en/booking/{% else %}/booking/{% endif %}" class="pricing-plan__btn thm-btn">
                                 {{ 'pricing.startingPacks.cta' | t(locale) }}
                             </a>
                         </div>
@@ -192,7 +119,11 @@ eleventyComputed:
                         </div>
                     </div>
                     <div class="pricing-plan__bottom">
-                        <p class="pricing-plan__per-day"><span>440 zł</span>/ 120min</p>
+                        <p class="pricing-plan__per-day">
+                            <span class="pricing-plan__price pricing-plan__price--old">470 zł</span>
+                            <span class="pricing-plan__price">400 zł</span><br>
+                            <span class="pricing-plan__time"><span class="fa fa-clock" aria-hidden="true"></span><span>120min</span></span>
+                        </p>
                         <ul class="pricing-plan__points list-unstyled">
                             <li>
                                 <div class="icon">
@@ -226,9 +157,17 @@ eleventyComputed:
                                     <p>{{ 'pricing.startingPacks.package2.option4' | t(locale) }}</p>
                                 </div>
                             </li>
+                             <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package2.option5' | t(locale) }}</p>
+                                </div>
+                            </li>
                         </ul>
                         <div class="pricing-plan__btn-box">
-                            <a href="contact.html" class="pricing-plan__btn thm-btn">
+                            <a href="{% if locale == 'en' %}/en/booking/{% else %}/booking/{% endif %}" class="pricing-plan__btn thm-btn">
                                 {{ 'pricing.startingPacks.cta' | t(locale) }}
                             </a>
                         </div>
@@ -248,7 +187,11 @@ eleventyComputed:
                         </div>
                     </div>
                     <div class="pricing-plan__bottom">
-                        <p class="pricing-plan__per-day"><span>490 zł</span>/ 150min</p>
+                        <p class="pricing-plan__per-day">
+                            <span class="pricing-plan__price pricing-plan__price--old">570 zł</span>
+                            <span class="pricing-plan__price">500 zł</span><br>
+                            <span class="pricing-plan__time"><span class="fa fa-clock" aria-hidden="true"></span><span>120min</span></span>
+                        </p>
                         <ul class="pricing-plan__points list-unstyled">
                             <li>
                                 <div class="icon">
@@ -282,9 +225,17 @@ eleventyComputed:
                                     <p>{{ 'pricing.startingPacks.package3.option4' | t(locale) }}</p>
                                 </div>
                             </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fa fa-check"></span>
+                                </div>
+                                <div class="text">
+                                    <p>{{ 'pricing.startingPacks.package3.option5' | t(locale) }}</p>
+                                </div>
+                            </li>
                         </ul>
                         <div class="pricing-plan__btn-box">
-                            <a href="contact.html" class="pricing-plan__btn thm-btn">
+                            <a href="{% if locale == 'en' %}/en/booking/{% else %}/booking/{% endif %}" class="pricing-plan__btn thm-btn">
                                 {{ 'pricing.startingPacks.cta' | t(locale) }}
                             </a>
                         </div>
@@ -296,3 +247,122 @@ eleventyComputed:
     </div>
 </section>
 <!--Pricing Plans End-->
+
+<!--Services Two Start-->
+<section class="services-two">
+    <div class="container">
+        <div class="services-two__inner">
+            <div class="services-two__shape-1 float-bob-x">
+                <img src="/assets/images/shapes/services-two-shape-1.png" alt="">
+            </div>
+            <div class="row">
+                <!--Services Two Single Start-->
+                <div class="col-xl-6 col-lg-6">
+                    <div class="services-two__single">
+                        <h3 class="services-two__title">{{ 'pricing.pricingConsultations.title' | t(locale) }}</h3>
+                        <ul class="list-unstyled services-two__list">
+                            {% for it in services.consultations %}
+                            <li>
+                                <div class="services-two__services-name">
+                                    <h3><a href="{% if locale == 'en' %}/en/consultations/{% else %}/consultations/{% endif %}">{{ it.name | t(locale) }}</a></h3>
+                                    <p>{{ it.duration }}</p>
+                                </div>
+                                <div class="services-two__services-price">
+                                    <h4>{{ it.price }}</h4>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!--Services Two Single End-->
+                <!--Services Two Single Start-->
+                <div class="col-xl-6 col-lg-6">
+                    <div class="services-two__single">
+                        <h3 class="services-two__title">{{ 'pricing.pricingTreatments.title' | t(locale) }}</h3>
+                        <ul class="list-unstyled services-two__list">
+                            {% for it in services.treatments %}
+                            <li>
+                                <div class="services-two__services-name">
+                                    <h3><a href="{% if locale == 'en' %}/en/treatments/{% else %}/treatments/{% endif %}">{{ it.name | t(locale) }}</a></h3>
+                                    <p>{{ it.duration }}</p>
+                                </div>
+                                <div class="services-two__services-price">
+                                    <h4>{{ it.price }}</h4>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!--Services Two Single End-->
+            </div>
+            <br>
+            <div class="row">
+                 <!--Services Two Single Start-->
+                <div class="col-xl-6 col-lg-6 offset-xl-3 offset-lg-3">
+                    <div class="services-two__single">
+                        <h3 class="services-two__title">{{ 'pricing.headSPA.title' | t(locale) }}</h3>
+                        <ul class="list-unstyled services-two__list">
+                            {% for it in services.headSpa %}
+                            <li>
+                                <div class="services-two__services-name">
+                                    <h3><a href="{% if locale == 'en' %}/en/head-spa/{% else %}/head-spa/{% endif %}">{{ it.name | t(locale) }}</a></h3>
+                                    <p>{{ it.duration }}</p>
+                                </div>
+                                <div class="services-two__services-price">
+                                    <h4>{{ it.price }}</h4>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!--Services Two Single End-->
+            </div>
+            <div class="row" style="margin-bottom:30px">
+                <div class="col-xl-12">
+                    <div class="services-two__btn-box">
+                        <a href="{% if locale == 'en' %}/en/booking/{% else %}/booking/{% endif %}" class="thm-btn services-two__btn">
+                            {{ 'pricing.bookNow' | t(locale) }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Services Two End-->
+
+
+<!--Treatment Result Start-->
+<section class="treatment-result">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="treatment-result__left">
+                    <div class="section-title text-left">
+                        <span class="section-title__tagline">{{ 'pricing.voucher.subtitle' | t(locale) }}</span>
+                        <h2 class="section-title__title">{{ 'pricing.voucher.title' | t(locale) }}</h2>
+                    </div>
+                    <p class="treatment-result__text">{{ 'pricing.voucher.description' | t(locale) }}</p>
+                    <div class="services-two__btn-box">
+                        <a href="mailto:{{ site.email }}?subject={{ 'pricing.voucher.email.subject' | t(locale) | mailto }}&amp;body={{ 'pricing.voucher.email.body' | t(locale) | mailto }}" class="thm-btn services-two__btn">
+                            {{ 'pricing.voucher.cta' | t(locale) }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="treatment-result__right">
+                    <div class="treatment-result__img-box">
+                        <div class="treatment-result__img vouchers-image">
+                            <img src="/assets/images/resources/vouchers.jpg" alt="{{ 'pricing.voucher.imageAlt' | t(locale) }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Treatment Result End-->

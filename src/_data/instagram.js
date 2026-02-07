@@ -119,10 +119,6 @@ export default async function () {
 
     // Przefiltruj tylko zdjęcia i karuzele (pomijamy video dla uproszczenia)
     const posts = data.data
-      .filter(
-        (post) =>
-          post.media_type === 'IMAGE' || post.media_type === 'CAROUSEL_ALBUM'
-      )
       .map((post) => ({
         id: post.id,
         permalink: post.permalink,

@@ -10,14 +10,14 @@
             </li>
             <li>
               <div class="icon"><i class="fas fa-phone"></i></div>
-              <div class="text"><p><a href="tel:{{ site.phone }}">+48 {{ site.phone }}</a></p></div>
+              <div class="text"><p><a href="tel:{{ site.phone }}">{{ site.phone }}</a></p></div>
             </li>
           </ul>
         </div>
         <div class="main-header__top-right">
           <div class="main-header__social">
-            <a href="{{ site.links.facebook }}"><i class="fab fa-facebook"></i></a>
-            <a href="{{ site.links.instagram }}"><i class="fab fa-instagram"></i></a>
+            <a href="{{ site.links.facebook }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="{{ site.links.instagram }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
           </div>
           <div class="main-header__language-switcher">
             <a href="{{ page.url | alternateUrl('pl') }}" class="{% if locale == 'pl' or not locale %}active{% endif %}" title="Polski">PL</a>
@@ -25,7 +25,7 @@
             <a href="{{ page.url | alternateUrl('en') }}" class="{% if locale == 'en' %}active{% endif %}" title="English">EN</a>
           </div>
           <div class="main-header__btn-box">
-            <a href="booksy" class="thm-btn main-header__btn">{{ 'header.bookNow' | t(locale) }}</a>
+            <a href="{% if locale == 'en' %}/en/booking/{% else %}/booking/{% endif %}" class="thm-btn main-header__btn">{{ 'header.bookNow' | t(locale) }}</a>
           </div>
         </div>
       </div>
@@ -37,40 +37,48 @@
       <div class="main-menu__wrapper-inner">
         <div class="main-menu__left">
           <div class="main-menu__logo">
-            <a href="/" title="Hair & Hair - Strona główna"><img src="/assets/images/logo/logo_side.svg" alt="Hair & Hair - Gabinet Trychologiczny"></a>
+            <a href="{% if locale == 'en' %}/en/{% else %}/{% endif %}" title="Hair & Hair - Strona główna"><img src="/assets/images/logo/logo_side.svg" alt="Hair & Hair - Gabinet Trychologiczny"></a>
           </div>
         </div>
 
         <div class="main-menu__main-menu-box">
-          <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
           <ul class="main-menu__list" data-locale="{{ locale }}">
             <li class="{% if (page.url == '/' and locale == 'pl') or (page.url == '/en/' and locale == 'en') %}current{% endif %}">
-              <a href="/" data-route="home">{{ 'nav.home' | t(locale) }}</a>
+              <a href="{% if locale == 'en' %}/en/{% else %}/{% endif %}" data-route="home">{{ 'nav.home' | t(locale) }}</a>
             </li>
-            <li class="dropdown {% if '/services' in page.url or '/en/services' in page.url %}current{% endif %}">
+            <li class="dropdown {% if '/consultations' in page.url or '/en/consultations' in page.url or '/treatments' in page.url or '/en/treatments' in page.url or '/consultations-online' in page.url or '/en/consultations-online' in page.url %}current{% endif %}">
               <a href="#">{{ 'nav.trichology' | t(locale) }}</a>
               <ul>
-                <li class="{% if page.url == '/services-consultations/' or page.url == '/en/services-consultations/' %}current{% endif %}">
-                  <a href="/services-consultations/" data-route="services-consultations">{{ 'nav.treatments' | t(locale) }}</a>
+                <li class="{% if page.url == '/consultations/' or page.url == '/en/consultations/' %}current{% endif %}">
+                  <a href="{% if locale == 'en' %}/en/consultations/{% else %}/consultations/{% endif %}" data-route="consultations">{{ 'nav.consultations' | t(locale) }}</a>
                 </li>
-                <li class="{% if page.url == '/services-treatments/' or page.url == '/en/services-treatments/' %}current{% endif %}">
-                  <a href="/services-treatments/" data-route="services-treatments">{{ 'nav.consultations' | t(locale) }}</a>
+                <li class="{% if page.url == '/consultations-online/' or page.url == '/en/consultations-online/' %}current{% endif %}">
+                  <a href="{% if locale == 'en' %}/en/consultations-online/{% else %}/consultations-online/{% endif %}" data-route="consultations-online">{{ 'nav.online' | t(locale) }}</a>
+                </li>
+                <li class="{% if page.url == '/treatments/' or page.url == '/en/treatments/' %}current{% endif %}">
+                  <a href="{% if locale == 'en' %}/en/treatments/{% else %}/treatments/{% endif %}" data-route="treatments">{{ 'nav.treatments' | t(locale) }}</a>
                 </li>
               </ul>
             </li>
             <li class="{% if page.url == '/head-spa/' or page.url == '/en/head-spa/' %}current{% endif %}">
-              <a href="/head-spa/" data-route="head-spa">{{ 'nav.headSpa' | t(locale) }}</a>
+              <a href="{% if locale == 'en' %}/en/head-spa/{% else %}/head-spa/{% endif %}" data-route="head-spa">{{ 'nav.headSpa' | t(locale) }}</a>
             </li>
-            <li class="{% if page.url == '/training/' or page.url == '/en/training/' %}current{% endif %}">
-              <a href="/training/" data-route="training">{{ 'nav.training' | t(locale) }}</a>
+            <li class="{% if page.url == '/pricing/' or page.url == '/en/pricing/' %}current{% endif %}">
+              <a href="{% if locale == 'en' %}/en/pricing/{% else %}/pricing/{% endif %}" data-route="pricing">{{ 'nav.pricing' | t(locale) }}</a>
             </li>
             <li class="{% if '/contact' in page.url %}current{% endif %}">
-              <a href="/contact/" data-route="contact">{{ 'nav.contact' | t(locale) }}</a>
+              <a href="{% if locale == 'en' %}/en/contact/{% else %}/contact/{% endif %}" data-route="contact">{{ 'nav.contact' | t(locale) }}</a>
             </li>
           </ul>
         </div>
 
-        <div class="main-menu__right"></div>
+        <div class="main-menu__right">
+          <div class="main-menu__language-switcher-mobile">
+            <a href="{{ page.url | alternateUrl('pl') }}" class="{% if locale == 'pl' or not locale %}active{% endif %}" title="Polski">PL</a>
+            <a href="{{ page.url | alternateUrl('en') }}" class="{% if locale == 'en' %}active{% endif %}" title="English">EN</a>
+          </div>
+          <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+        </div>
       </div>
     </div>
   </nav>
