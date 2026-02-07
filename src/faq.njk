@@ -51,6 +51,11 @@ eleventyComputed:
     },
     {
       "@type": "Question",
+      "name": "{{ 'treatments.faq.q4' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'treatments.faq.a4' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
       "name": "{{ 'consultations.faq.q1' | t(locale) }}",
       "acceptedAnswer": { "@type": "Answer", "text": "{{ 'consultations.faq.a1' | t(locale) }}" }
     },
@@ -63,6 +68,16 @@ eleventyComputed:
       "@type": "Question",
       "name": "{{ 'consultations.faq.q3' | t(locale) }}",
       "acceptedAnswer": { "@type": "Answer", "text": "{{ 'consultations.faq.a3' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'consultations.faq.q4' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'consultations.faq.a4' | t(locale) }}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ 'consultations.faq.q5' | t(locale) }}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{ 'consultations.faq.a5' | t(locale) }}" }
     },
     {
       "@type": "Question",
@@ -122,6 +137,10 @@ eleventyComputed:
         <div class="accrodion-title"><h4>{{ 'treatments.faq.q3' | t(locale) }}</h4></div>
         <div class="accrodion-content"><div class="inner"><p>{{ 'treatments.faq.a3' | t(locale) }}</p></div></div>
       </div>
+      <div class="accrodion last-child">
+        <div class="accrodion-title"><h4>{{ 'treatments.faq.q4' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'treatments.faq.a4' | t(locale) }}</p></div></div>
+      </div>
     </div>
 
     <div class="section-title text-left faq-section-title" id="faq-consultations">
@@ -139,6 +158,14 @@ eleventyComputed:
       <div class="accrodion last-child">
         <div class="accrodion-title"><h4>{{ 'consultations.faq.q3' | t(locale) }}</h4></div>
         <div class="accrodion-content"><div class="inner"><p>{{ 'consultations.faq.a3' | t(locale) }}</p></div></div>
+      </div>
+      <div class="accrodion last-child">
+        <div class="accrodion-title"><h4>{{ 'consultations.faq.q4' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'consultations.faq.a4' | t(locale) }}</p></div></div>
+      </div>
+      <div class="accrodion last-child">
+        <div class="accrodion-title"><h4>{{ 'consultations.faq.q5' | t(locale) }}</h4></div>
+        <div class="accrodion-content"><div class="inner"><p>{{ 'consultations.faq.a5' | t(locale) }}</p></div></div>
       </div>
     </div>
 

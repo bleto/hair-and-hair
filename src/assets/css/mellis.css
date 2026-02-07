@@ -144,6 +144,8 @@ ul {
 }
 
 .list-unstyled {
+  list-style: none;
+  margin: 0;
   padding-left: 0;
 }
 
@@ -8041,16 +8043,21 @@ ul {
 .client-issues__points li {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .client-issues__points li .icon {
   position: relative;
   display: flex;
+  flex: 0 0 16px;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
+  min-width: 16px;
+  max-width: 16px;
   width: 16px;
   height: 16px;
+  margin-top: 6px;
   background-color: var(--mellis-base);
   border-radius: 50%;
 }
@@ -8064,6 +8071,7 @@ ul {
 
 .client-issues__points li .text {
   margin-left: 15px;
+  flex: 1 1 auto;
 }
 
 .client-issues__points li .text p {
@@ -8181,16 +8189,21 @@ ul {
 .treatment-result__points li {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .treatment-result__points li .icon {
   position: relative;
   display: flex;
+  flex: 0 0 16px;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
+  min-width: 16px;
+  max-width: 16px;
   width: 16px;
   height: 16px;
+  margin-top: 6px;
   background-color: var(--mellis-base);
   border-radius: 50%;
 }
@@ -8204,6 +8217,7 @@ ul {
 
 .treatment-result__points li .text {
   margin-left: 15px;
+  flex: 1 1 auto;
 }
 
 .treatment-result__points li .text p {
